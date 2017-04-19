@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="RepSep" version="0.1.9 [tarball]" docurl="http://www.seqan.de" category="" >
+	<executableName>rep_sep</executableName>
+	<description>Repeat Separation Tool -- Copyright (c) 2009, Stephan Aiche</description>
+	<manual></manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="rep_sep.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--assembly" isList="false">
+			<mapping referenceName="rep_sep.assembly" />
+		</clielement>
+		<clielement optionIdentifier="--contig" isList="false">
+			<mapping referenceName="rep_sep.contig" />
+		</clielement>
+		<clielement optionIdentifier="--copy-number" isList="false">
+			<mapping referenceName="rep_sep.copy-number" />
+		</clielement>
+		<clielement optionIdentifier="--no-clean" isList="false">
+			<mapping referenceName="rep_sep.no-clean" />
+		</clielement>
+		<clielement optionIdentifier="--dotfile" isList="false">
+			<mapping referenceName="rep_sep.dotfile" />
+		</clielement>
+		<clielement optionIdentifier="--output-prefix" isList="false">
+			<mapping referenceName="rep_sep.output-prefix" />
+		</clielement>
+		<clielement optionIdentifier="--error" isList="false">
+			<mapping referenceName="rep_sep.error" />
+		</clielement>
+		<clielement optionIdentifier="--hmce" isList="false">
+			<mapping referenceName="rep_sep.hmce" />
+		</clielement>
+		<clielement optionIdentifier="--hsce" isList="false">
+			<mapping referenceName="rep_sep.hsce" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="rep_sep" description="Repeat Separation Tool -- Copyright (c) 2009, Stephan Aiche">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="assembly" value="" type="input_file" description="Input assembly filename." supported_formats="*.afg" required="true" advanced="false" />
+			<ITEM name="contig" value="0" type="integer" description="Index of the contig in the assembly that should be analyzed (NOTE: the index is 0 based)." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="copy-number" value="2" type="integer" description="Number of compressed repeat copies in the given contig." restrictions="2:" required="false" advanced="false" />
+			<ITEM name="no-clean" value="false" type="string" description="Disable automatic graph cleaning." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="dotfile" value="false" type="string" description="Write constructed graph as dotfile to visualize in Graphviz." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="output-prefix" value="" type="string" description="Filename prefix for the result files. Files for the ILP and the Result will be named PREFIX (lp|rs|dot|heu)." required="true" advanced="false" />
+			<ITEM name="error" value="" type="double" description="Expected sequencing error." required="false" advanced="false" />
+			<ITEM name="hmce" value="false" type="string" description="Solve the problem with the multi-component-expansion (mce) heuristic [DEFAULT]." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="hsce" value="false" type="string" description="Solve the problem with the single-component-expansion (sce) heuristic." restrictions="true,false" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="MasonFragSequencing" version="2.0.7 [tarball]" docurl="http://www.seqan.de" category="Simulators" >
+	<executableName>mason_frag_sequencing</executableName>
+	<description>Fragment Sequencing Simulation</description>
+	<manual>Given a FASTA file with fragments, simulate sequencing thereof.
+This program is a more lightweight version of mason_sequencing without support for the application of VCF and fragment sampling.  Output of SAM is also not available.  However, it uses the same code for the simulation of the reads as the more powerful mason_simulator.
+You can use mason_frag_sequencing if you want to implement you rown fragmentation behaviour, e.g. if you have implemented your own bias models.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="mason_frag_sequencing.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="mason_frag_sequencing.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="mason_frag_sequencing.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="mason_frag_sequencing.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--seed" isList="false">
+			<mapping referenceName="mason_frag_sequencing.seed" />
+		</clielement>
+		<clielement optionIdentifier="--in" isList="false">
+			<mapping referenceName="mason_frag_sequencing.in" />
+		</clielement>
+		<clielement optionIdentifier="--out" isList="false">
+			<mapping referenceName="mason_frag_sequencing.out" />
+		</clielement>
+		<clielement optionIdentifier="--out-right" isList="false">
+			<mapping referenceName="mason_frag_sequencing.out-right" />
+		</clielement>
+		<clielement optionIdentifier="--force-single-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.force-single-end" />
+		</clielement>
+		<clielement optionIdentifier="--seq-technology" isList="false">
+			<mapping referenceName="mason_frag_sequencing.seq-technology" />
+		</clielement>
+		<clielement optionIdentifier="--seq-mate-orientation" isList="false">
+			<mapping referenceName="mason_frag_sequencing.seq-mate-orientation" />
+		</clielement>
+		<clielement optionIdentifier="--seq-strands" isList="false">
+			<mapping referenceName="mason_frag_sequencing.seq-strands" />
+		</clielement>
+		<clielement optionIdentifier="--embed-read-info" isList="false">
+			<mapping referenceName="mason_frag_sequencing.embed-read-info" />
+		</clielement>
+		<clielement optionIdentifier="--read-name-prefix" isList="false">
+			<mapping referenceName="mason_frag_sequencing.read-name-prefix" />
+		</clielement>
+		<clielement optionIdentifier="--enable-bs-seq" isList="false">
+			<mapping referenceName="mason_frag_sequencing.enable-bs-seq" />
+		</clielement>
+		<clielement optionIdentifier="--bs-seq-protocol" isList="false">
+			<mapping referenceName="mason_frag_sequencing.bs-seq-protocol" />
+		</clielement>
+		<clielement optionIdentifier="--bs-seq-conversion-rate" isList="false">
+			<mapping referenceName="mason_frag_sequencing.bs-seq-conversion-rate" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-read-length" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-read-length" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-error-profile-file" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-error-profile-file" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-prob-insert" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-prob-insert" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-prob-deletion" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-prob-deletion" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-prob-mismatch-scale" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-prob-mismatch-scale" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-prob-mismatch" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-prob-mismatch" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-prob-mismatch-begin" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-prob-mismatch-begin" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-prob-mismatch-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-prob-mismatch-end" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-position-raise" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-position-raise" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-quality-mean-begin" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-quality-mean-begin" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-quality-mean-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-quality-mean-end" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-quality-stddev-begin" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-quality-stddev-begin" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-quality-stddev-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-quality-stddev-end" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-mismatch-quality-mean-begin" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-mismatch-quality-mean-begin" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-mismatch-quality-mean-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-mismatch-quality-mean-end" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-mismatch-quality-stddev-begin" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-mismatch-quality-stddev-begin" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-mismatch-quality-stddev-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-mismatch-quality-stddev-end" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-left-template-fastq" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-left-template-fastq" />
+		</clielement>
+		<clielement optionIdentifier="--illumina-right-template-fastq" isList="false">
+			<mapping referenceName="mason_frag_sequencing.illumina-right-template-fastq" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-read-length-model" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-read-length-model" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-read-length-min" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-read-length-min" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-read-length-max" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-read-length-max" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-read-length-mean" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-read-length-mean" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-read-length-error" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-read-length-error" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-prob-mismatch-scale" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-prob-mismatch-scale" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-prob-mismatch-begin" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-prob-mismatch-begin" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-prob-mismatch-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-prob-mismatch-end" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-prob-insertion-begin" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-prob-insertion-begin" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-prob-insertion-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-prob-insertion-end" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-prob-deletion-begin" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-prob-deletion-begin" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-prob-deletion-end" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-prob-deletion-end" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-quality-match-start-mean" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-quality-match-start-mean" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-quality-match-end-mean" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-quality-match-end-mean" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-quality-match-start-stddev" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-quality-match-start-stddev" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-quality-match-end-stddev" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-quality-match-end-stddev" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-quality-error-start-mean" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-quality-error-start-mean" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-quality-error-end-mean" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-quality-error-end-mean" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-quality-error-start-stddev" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-quality-error-start-stddev" />
+		</clielement>
+		<clielement optionIdentifier="--sanger-quality-error-end-stddev" isList="false">
+			<mapping referenceName="mason_frag_sequencing.sanger-quality-error-end-stddev" />
+		</clielement>
+		<clielement optionIdentifier="--454-read-length-model" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-read-length-model" />
+		</clielement>
+		<clielement optionIdentifier="--454-read-length-min" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-read-length-min" />
+		</clielement>
+		<clielement optionIdentifier="--454-read-length-max" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-read-length-max" />
+		</clielement>
+		<clielement optionIdentifier="--454-read-length-mean" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-read-length-mean" />
+		</clielement>
+		<clielement optionIdentifier="--454-read-length-stddev" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-read-length-stddev" />
+		</clielement>
+		<clielement optionIdentifier="--454-no-sqrt-in-std-dev" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-no-sqrt-in-std-dev" />
+		</clielement>
+		<clielement optionIdentifier="--454-proportionality-factor" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-proportionality-factor" />
+		</clielement>
+		<clielement optionIdentifier="--454-background-noise-mean" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-background-noise-mean" />
+		</clielement>
+		<clielement optionIdentifier="--454-background-noise-stddev" isList="false">
+			<mapping referenceName="mason_frag_sequencing.454-background-noise-stddev" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="mason_frag_sequencing" description="Fragment Sequencing Simulation">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Low verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Higher verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Highest verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="seed" value="0" type="integer" description="Seed to use for random number generator." required="false" advanced="false" />
+			<ITEM name="in" value="" type="input_file" description="Path to input file." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="out" value="" type="output_file" description="Output of single-end/left end reads." supported_formats="*.fa,*.fasta,*.fq,*.fastq,*.fq.gz,*.fastq.gz" required="true" advanced="false" />
+			<ITEM name="out-right" value="" type="output_file" description="Output of right reads.  Giving this options enables paired-end simulation." supported_formats="*.fa,*.fasta,*.fq,*.fastq,*.fq.gz,*.fastq.gz" required="false" advanced="false" />
+			<ITEM name="force-single-end" value="false" type="string" description="Force single-end simulation although --out-right is given." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="seq-technology" value="illumina" type="string" description="Set sequencing technology to simulate." restrictions="illumina,454,sanger" required="false" advanced="false" />
+			<ITEM name="seq-mate-orientation" value="FR" type="string" description="Orientation for paired reads.  See section Read Orientation below." restrictions="FR,RF,FF,FF2" required="false" advanced="false" />
+			<ITEM name="seq-strands" value="both" type="string" description="Strands to simulate from, only applicable to paired sequencing simulation." restrictions="forward,reverse,both" required="false" advanced="false" />
+			<ITEM name="embed-read-info" value="false" type="string" description="Whether or not to embed read information." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="read-name-prefix" value="simulated." type="string" description="Read names will have this prefix." required="false" advanced="false" />
+			<ITEM name="enable-bs-seq" value="false" type="string" description="Enable BS-seq simulation." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="bs-seq-protocol" value="directional" type="string" description="Protocol to use for BS-Seq simulation." restrictions="directional,undirectional" required="false" advanced="false" />
+			<ITEM name="bs-seq-conversion-rate" value="0.99" type="double" description="Conversion rate for unmethylated Cs to become Ts." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="illumina-read-length" value="100" type="integer" description="Read length for Illumina simulation." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="illumina-error-profile-file" value="" type="input_file" description="Path to file with Illumina error profile.  The file must be a text file with floating point numbers separated by space, each giving a positional error rate." supported_formats="*.txt" required="false" advanced="false" />
+			<ITEM name="illumina-prob-insert" value="0.00005" type="double" description="Insert per-base probability for insertion in Illumina sequencing." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="illumina-prob-deletion" value="0.00005" type="double" description="Insert per-base probability for deletion in Illumina sequencing." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="illumina-prob-mismatch-scale" value="1.0" type="double" description="Scaling factor for Illumina mismatch probability." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="illumina-prob-mismatch" value="0.004" type="double" description="Average per-base mismatch probability in Illumina sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="illumina-prob-mismatch-begin" value="0.002" type="double" description="Per-base mismatch probability of first base in Illumina sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="illumina-prob-mismatch-end" value="0.012" type="double" description="Per-base mismatch probability of last base in Illumina sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="illumina-position-raise" value="0.66" type="double" description="Point where the error curve raises in relation to read length." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="illumina-quality-mean-begin" value="40.0" type="double" description="Mean PHRED quality for non-mismatch bases of first base in Illumina sequencing." required="false" advanced="false" />
+			<ITEM name="illumina-quality-mean-end" value="39.5" type="double" description="Mean PHRED quality for non-mismatch bases of last base in Illumina sequencing." required="false" advanced="false" />
+			<ITEM name="illumina-quality-stddev-begin" value="0.05" type="double" description="Standard deviation of PHRED quality for non-mismatch bases of first base in Illumina sequencing." required="false" advanced="false" />
+			<ITEM name="illumina-quality-stddev-end" value="10.0" type="double" description="Standard deviation of PHRED quality for non-mismatch bases of last base in Illumina sequencing." required="false" advanced="false" />
+			<ITEM name="illumina-mismatch-quality-mean-begin" value="40.0" type="double" description="Mean PHRED quality for mismatch bases of first base in Illumina sequencing." required="false" advanced="false" />
+			<ITEM name="illumina-mismatch-quality-mean-end" value="30.0" type="double" description="Mean PHRED quality for mismatch bases of last base in Illumina sequencing." required="false" advanced="false" />
+			<ITEM name="illumina-mismatch-quality-stddev-begin" value="3.0" type="double" description="Standard deviation of PHRED quality for mismatch bases of first base in Illumina sequencing." required="false" advanced="false" />
+			<ITEM name="illumina-mismatch-quality-stddev-end" value="15.0" type="double" description="Standard deviation of PHRED quality for mismatch bases of last base in Illumina sequencing." required="false" advanced="false" />
+			<ITEM name="illumina-left-template-fastq" value="" type="input_file" description="FASTQ file to use for a template for left-end reads." supported_formats="*.fq,*.fastq,*.fq.gz,*.fastq.gz" required="false" advanced="false" />
+			<ITEM name="illumina-right-template-fastq" value="" type="input_file" description="FASTQ file to use for a template for right-end reads." supported_formats="*.fq,*.fastq,*.fq.gz,*.fastq.gz" required="false" advanced="false" />
+			<ITEM name="sanger-read-length-model" value="normal" type="string" description="The model to use for sampling the Sanger read length." restrictions="normal,uniform" required="false" advanced="false" />
+			<ITEM name="sanger-read-length-min" value="400" type="integer" description="The minimal read length when the read length is sampled uniformly." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="sanger-read-length-max" value="600" type="integer" description="The maximal read length when the read length is sampled uniformly." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="sanger-read-length-mean" value="400" type="double" description="The mean read length when the read length is sampled with normal distribution." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="sanger-read-length-error" value="40" type="double" description="The read length standard deviation when the read length is sampled uniformly." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="sanger-prob-mismatch-scale" value="1.0" type="double" description="Scaling factor for Sanger mismatch probability." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="sanger-prob-mismatch-begin" value="0.005" type="double" description="Per-base mismatch probability of first base in Sanger sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sanger-prob-mismatch-end" value="0.001" type="double" description="Per-base mismatch probability of last base in Sanger sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sanger-prob-insertion-begin" value="0.0025" type="double" description="Per-base insertion probability of first base in Sanger sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sanger-prob-insertion-end" value="0.005" type="double" description="Per-base insertion probability of last base in Sanger sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sanger-prob-deletion-begin" value="0.0025" type="double" description="Per-base deletion probability of first base in Sanger sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sanger-prob-deletion-end" value="0.005" type="double" description="Per-base deletion probability of last base in Sanger sequencing." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sanger-quality-match-start-mean" value="40.0" type="double" description="Mean PHRED quality for non-mismatch bases of first base in Sanger sequencing." required="false" advanced="false" />
+			<ITEM name="sanger-quality-match-end-mean" value="39.5" type="double" description="Mean PHRED quality for non-mismatch bases of last base in Sanger sequencing." required="false" advanced="false" />
+			<ITEM name="sanger-quality-match-start-stddev" value="0.1" type="double" description="Mean PHRED quality for non-mismatch bases of first base in Sanger sequencing." required="false" advanced="false" />
+			<ITEM name="sanger-quality-match-end-stddev" value="2" type="double" description="Mean PHRED quality for non-mismatch bases of last base in Sanger sequencing." required="false" advanced="false" />
+			<ITEM name="sanger-quality-error-start-mean" value="30" type="double" description="Mean PHRED quality for erroneous bases of first base in Sanger sequencing." required="false" advanced="false" />
+			<ITEM name="sanger-quality-error-end-mean" value="20" type="double" description="Mean PHRED quality for erroneous bases of last base in Sanger sequencing." required="false" advanced="false" />
+			<ITEM name="sanger-quality-error-start-stddev" value="2" type="double" description="Mean PHRED quality for erroneous bases of first base in Sanger sequencing." required="false" advanced="false" />
+			<ITEM name="sanger-quality-error-end-stddev" value="5" type="double" description="Mean PHRED quality for erroneous bases of last base in Sanger sequencing." required="false" advanced="false" />
+			<ITEM name="454-read-length-model" value="normal" type="string" description="The model to use for sampling the 454 read length." restrictions="normal,uniform" required="false" advanced="false" />
+			<ITEM name="454-read-length-min" value="10" type="integer" description="The minimal read length when the read length is sampled uniformly." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="454-read-length-max" value="600" type="integer" description="The maximal read length when the read length is sampled uniformly." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="454-read-length-mean" value="400" type="double" description="The mean read length when the read length is sampled with normal distribution." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="454-read-length-stddev" value="40" type="double" description="The read length standard deviation when the read length is sampled with normal distribution." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="454-no-sqrt-in-std-dev" value="false" type="string" description="For error model, if set then (sigma = k * r)) is used, otherwise (sigma = k * sqrt(r))." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="454-proportionality-factor" value="0.15" type="double" description="Proportionality factor for calculating the standard deviation proportional to the read length." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="454-background-noise-mean" value="0.23" type="double" description="Mean of lognormal distribution to use for the noise." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="454-background-noise-stddev" value="0.15" type="double" description="Standard deviation of lognormal distribution to use for the noise." restrictions="0:" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="RabemaPrepareSam" version="1.2.8 [tarball]" docurl="http://www.seqan.de" category="Benchmarking" >
+	<executableName>rabema_prepare_sam</executableName>
+	<description>Prepare SAM For Rabema</description>
+	<manual>Prepare SAM file for usage with RABEMA.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="rabema_prepare_sam.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--in-file" isList="false">
+			<mapping referenceName="rabema_prepare_sam.in-file" />
+		</clielement>
+		<clielement optionIdentifier="--out-file" isList="false">
+			<mapping referenceName="rabema_prepare_sam.out-file" />
+		</clielement>
+		<clielement optionIdentifier="--dont-check-sorting" isList="false">
+			<mapping referenceName="rabema_prepare_sam.dont-check-sorting" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="rabema_prepare_sam" description="Prepare SAM For Rabema">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="in-file" value="" type="input_file" description="Path to the input file." supported_formats="*.sam" required="true" advanced="false" />
+			<ITEM name="out-file" value="" type="output_file" description="Path to the output file." supported_formats="*.sam" required="true" advanced="false" />
+			<ITEM name="dont-check-sorting" value="false" type="string" description="Do not check sortedness." restrictions="true,false" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

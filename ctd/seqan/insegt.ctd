@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Insegt" version="1.1.8 [tarball]" docurl="http://www.seqan.de" category="Utilities" >
+	<executableName>insegt</executableName>
+	<description>INtersecting SEcond Generation sequencing daTa with annotation</description>
+	<manual>INSEGT is a tool to analyze alignments of RNA-Seq reads (single-end or paired-end) by using gene-annotations.
+Input to INSEGT is a SAM file containing the alignments and a file containing the annotations of the reference genome, either in GFF or GTF format.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="insegt.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--read-output" isList="false">
+			<mapping referenceName="insegt.read-output" />
+		</clielement>
+		<clielement optionIdentifier="--anno-output" isList="false">
+			<mapping referenceName="insegt.anno-output" />
+		</clielement>
+		<clielement optionIdentifier="--tuple-output" isList="false">
+			<mapping referenceName="insegt.tuple-output" />
+		</clielement>
+		<clielement optionIdentifier="--fusion-output" isList="false">
+			<mapping referenceName="insegt.fusion-output" />
+		</clielement>
+		<clielement optionIdentifier="--ntuple" isList="false">
+			<mapping referenceName="insegt.ntuple" />
+		</clielement>
+		<clielement optionIdentifier="--offset-interval" isList="false">
+			<mapping referenceName="insegt.offset-interval" />
+		</clielement>
+		<clielement optionIdentifier="--threshold-gaps" isList="false">
+			<mapping referenceName="insegt.threshold-gaps" />
+		</clielement>
+		<clielement optionIdentifier="--threshold-count" isList="false">
+			<mapping referenceName="insegt.threshold-count" />
+		</clielement>
+		<clielement optionIdentifier="--threshold-rpkm" isList="false">
+			<mapping referenceName="insegt.threshold-rpkm" />
+		</clielement>
+		<clielement optionIdentifier="--max-tuple" isList="false">
+			<mapping referenceName="insegt.max-tuple" />
+		</clielement>
+		<clielement optionIdentifier="--exact-ntuple" isList="false">
+			<mapping referenceName="insegt.exact-ntuple" />
+		</clielement>
+		<clielement optionIdentifier="--unknown-orientation" isList="false">
+			<mapping referenceName="insegt.unknown-orientation" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="insegt.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="insegt.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="insegt" description="INtersecting SEcond Generation sequencing daTa with annotation">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="read-output" value="" type="output_file" description="Output filename for read-output, which contains the mapped annotations followed by their parent annotation." supported_formats="*.gff" required="false" advanced="false" />
+			<ITEM name="anno-output" value="" type="output_file" description="Output filename for anno-output, which contains the annotations similar to the GFF input and additionally the counts of the mapped reads and the normalized expression levels in RPKM." supported_formats="*.gff" required="false" advanced="false" />
+			<ITEM name="tuple-output" value="" type="output_file" description="Output filename for tuple-output, which contains exon tuples connected by reads or matepairs." supported_formats="*.gff" required="false" advanced="false" />
+			<ITEM name="fusion-output" value="" type="string" description="Output filename for fusion-output, which contains exon tuple of gene fusions (Advanced option, currently no output port for KNIME)." restrictions="gff" required="false" advanced="false" />
+			<ITEM name="ntuple" value="2" type="integer" description="ntuple" required="false" advanced="false" />
+			<ITEM name="offset-interval" value="5" type="integer" description="Offset to short alignment-intervals for search." required="false" advanced="false" />
+			<ITEM name="threshold-gaps" value="5" type="integer" description="Threshold for allowed gaps in alignment (not introns)." required="false" advanced="false" />
+			<ITEM name="threshold-count" value="1" type="integer" description="Threshold for min. count of tuple for output." required="false" advanced="false" />
+			<ITEM name="threshold-rpkm" value="0.0" type="double" description="Threshold for min. RPKM of tuple for output." required="false" advanced="false" />
+			<ITEM name="max-tuple" value="false" type="string" description="Create only maxTuple (which are spanned by the whole read)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="exact-ntuple" value="false" type="string" description="Create only Tuple of exact length n. By default all tuple up to the given length are computed (if -m is set, -e will be ignored)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="unknown-orientation" value="false" type="string" description="Orientation of reads is unknown." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="" supported_formats="*.sam" required="true" advanced="false" />
+			<ITEM name="argument-1" value="" type="input_file" description="" supported_formats="*.gff,*.gtf" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

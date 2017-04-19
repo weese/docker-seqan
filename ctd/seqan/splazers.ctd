@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Splazers" version="1.3.6 [tarball]" docurl="http://www.seqan.de" category="Read Mapping" >
+	<executableName>splazers</executableName>
+	<description>Split-map read sequences</description>
+	<manual>SplazerS uses a prefix-suffix mapping strategy to split-map read sequences.If a SAM file of mapped reads is given as input, all unmapped but anchoredreads are split-mapped onto anchoring target regions (specify option -an),if a Fasta/q file of reads is given, reads are split-mapped onto the wholereference sequence.
+(c) Copyright 2010 by Anne-Katrin Emde.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="splazers.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--output" isList="false">
+			<mapping referenceName="splazers.output" />
+		</clielement>
+		<clielement optionIdentifier="--forward" isList="false">
+			<mapping referenceName="splazers.forward" />
+		</clielement>
+		<clielement optionIdentifier="--reverse" isList="false">
+			<mapping referenceName="splazers.reverse" />
+		</clielement>
+		<clielement optionIdentifier="--percent-identity" isList="false">
+			<mapping referenceName="splazers.percent-identity" />
+		</clielement>
+		<clielement optionIdentifier="--recognition-rate" isList="false">
+			<mapping referenceName="splazers.recognition-rate" />
+		</clielement>
+		<clielement optionIdentifier="--param-dir" isList="false">
+			<mapping referenceName="splazers.param-dir" />
+		</clielement>
+		<clielement optionIdentifier="--indels" isList="false">
+			<mapping referenceName="splazers.indels" />
+		</clielement>
+		<clielement optionIdentifier="--library-length" isList="false">
+			<mapping referenceName="splazers.library-length" />
+		</clielement>
+		<clielement optionIdentifier="--library-error" isList="false">
+			<mapping referenceName="splazers.library-error" />
+		</clielement>
+		<clielement optionIdentifier="--max-hits" isList="false">
+			<mapping referenceName="splazers.max-hits" />
+		</clielement>
+		<clielement optionIdentifier="--unique" isList="false">
+			<mapping referenceName="splazers.unique" />
+		</clielement>
+		<clielement optionIdentifier="--trim-reads" isList="false">
+			<mapping referenceName="splazers.trim-reads" />
+		</clielement>
+		<clielement optionIdentifier="--min-clipped-len" isList="false">
+			<mapping referenceName="splazers.min-clipped-len" />
+		</clielement>
+		<clielement optionIdentifier="--quality-in-header" isList="false">
+			<mapping referenceName="splazers.quality-in-header" />
+		</clielement>
+		<clielement optionIdentifier="--outputUnmapped" isList="false">
+			<mapping referenceName="splazers.outputUnmapped" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="splazers.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--vverbose" isList="false">
+			<mapping referenceName="splazers.vverbose" />
+		</clielement>
+		<clielement optionIdentifier="--alignment" isList="false">
+			<mapping referenceName="splazers.alignment" />
+		</clielement>
+		<clielement optionIdentifier="--purge-ambiguous" isList="false">
+			<mapping referenceName="splazers.purge-ambiguous" />
+		</clielement>
+		<clielement optionIdentifier="--distance-range" isList="false">
+			<mapping referenceName="splazers.distance-range" />
+		</clielement>
+		<clielement optionIdentifier="--output-format" isList="false">
+			<mapping referenceName="splazers.output-format" />
+		</clielement>
+		<clielement optionIdentifier="--genome-naming" isList="false">
+			<mapping referenceName="splazers.genome-naming" />
+		</clielement>
+		<clielement optionIdentifier="--read-naming" isList="false">
+			<mapping referenceName="splazers.read-naming" />
+		</clielement>
+		<clielement optionIdentifier="--sort-order" isList="false">
+			<mapping referenceName="splazers.sort-order" />
+		</clielement>
+		<clielement optionIdentifier="--position-format" isList="false">
+			<mapping referenceName="splazers.position-format" />
+		</clielement>
+		<clielement optionIdentifier="--split-mapping" isList="false">
+			<mapping referenceName="splazers.split-mapping" />
+		</clielement>
+		<clielement optionIdentifier="--max-gap" isList="false">
+			<mapping referenceName="splazers.max-gap" />
+		</clielement>
+		<clielement optionIdentifier="--min-gap" isList="false">
+			<mapping referenceName="splazers.min-gap" />
+		</clielement>
+		<clielement optionIdentifier="--errors-prefix" isList="false">
+			<mapping referenceName="splazers.errors-prefix" />
+		</clielement>
+		<clielement optionIdentifier="--errors-suffix" isList="false">
+			<mapping referenceName="splazers.errors-suffix" />
+		</clielement>
+		<clielement optionIdentifier="--genome-len" isList="false">
+			<mapping referenceName="splazers.genome-len" />
+		</clielement>
+		<clielement optionIdentifier="--anchored" isList="false">
+			<mapping referenceName="splazers.anchored" />
+		</clielement>
+		<clielement optionIdentifier="--penalty-c" isList="false">
+			<mapping referenceName="splazers.penalty-c" />
+		</clielement>
+		<clielement optionIdentifier="--overabundance-cut" isList="false">
+			<mapping referenceName="splazers.overabundance-cut" />
+		</clielement>
+		<clielement optionIdentifier="--repeat-length" isList="false">
+			<mapping referenceName="splazers.repeat-length" />
+		</clielement>
+		<clielement optionIdentifier="--taboo-length" isList="false">
+			<mapping referenceName="splazers.taboo-length" />
+		</clielement>
+		<clielement optionIdentifier="--low-memory" isList="false">
+			<mapping referenceName="splazers.low-memory" />
+		</clielement>
+		<clielement optionIdentifier="--match-N" isList="false">
+			<mapping referenceName="splazers.match-N" />
+		</clielement>
+		<clielement optionIdentifier="--error-distr" isList="false">
+			<mapping referenceName="splazers.error-distr" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="splazers.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="splazers.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="splazers" description="Split-map read sequences">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="output" value="" type="output_file" description="Change output filename. Default: &lt;READS FILE&gt;.result." required="false" advanced="false" />
+			<ITEM name="forward" value="false" type="string" description="only compute forward matches" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="reverse" value="false" type="string" description="only compute reverse complement matches" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="percent-identity" value="92" type="double" description="Percent identity threshold." restrictions="50:100" required="false" advanced="false" />
+			<ITEM name="recognition-rate" value="99" type="double" description="set the percent recognition rate" restrictions="80:100" required="false" advanced="false" />
+			<ITEM name="param-dir" value="" type="string" description="Read user-computed parameter files in the directory &lt;DIR&gt;." required="false" advanced="false" />
+			<ITEM name="indels" value="false" type="string" description="Allow indels. Default: mismatches only." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="library-length" value="220" type="integer" description="Paired-end library length." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="library-error" value="50" type="integer" description="Paired-end library length tolerance." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="max-hits" value="100" type="integer" description="Output only &lt;NUM&gt; of the best hits." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="unique" value="false" type="string" description="Output only unique best matches (-m 1 -dr 0 -pa)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="trim-reads" value="" type="integer" description="Trim reads to given length. Default: off." restrictions="14:" required="false" advanced="false" />
+			<ITEM name="min-clipped-len" value="0" type="integer" description="min. read length for read clipping" restrictions="1:" required="false" advanced="false" />
+			<ITEM name="quality-in-header" value="false" type="string" description="quality string in fasta header" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="outputUnmapped" value="" type="output_file" description="output filename for unmapped reads" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="verbose mode" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="vverbose" value="false" type="string" description="very verbose mode" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="alignment" value="false" type="string" description="dump the alignment for each match" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="purge-ambiguous" value="false" type="string" description="purge reads with more than max-hits best matches" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="distance-range" value="" type="integer" description="only consider matches with at most NUM more errors compared to the best (default output all)" required="false" advanced="false" />
+			<ITEM name="output-format" value="" type="integer" description="Set output format. 0 = RazerS, 1 = Enhanced Fasta, 2 = Eland, 3 = GFF, 4 = SAM." restrictions="0:4" required="false" advanced="false" />
+			<ITEM name="genome-naming" value="0" type="integer" description="Select how genomes are named. 0 = use Fasta id, 1 = enumerate beginning with 1." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="read-naming" value="0" type="integer" description="Select how reads are named. 0 = use Fasta id, 1 = enumerate beginning with 1." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="sort-order" value="0" type="integer" description="Select how matches are sorted. 0 = read number, 1 = genome position." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="position-format" value="0" type="integer" description="Select begin/end position numbering (see Coordinate section below). 0 = gap space, 1 = position space." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="split-mapping" value="18" type="integer" description="min. match length for prefix/suffix mapping (to disable split mapping, set to 0)" required="false" advanced="false" />
+			<ITEM name="max-gap" value="10000" type="integer" description="max. length of middle gap" required="false" advanced="false" />
+			<ITEM name="min-gap" value="0" type="integer" description="min. length of middle gap (for edit distance mapping about 10% of read length is recommended)" required="false" advanced="false" />
+			<ITEM name="errors-prefix" value="1" type="integer" description="max. number of errors in prefix match" required="false" advanced="false" />
+			<ITEM name="errors-suffix" value="1" type="integer" description="max. number of errors in suffix match" required="false" advanced="false" />
+			<ITEM name="genome-len" value="3000" type="integer" description="genome length in Mb, for computation of expected number of random matches" restrictions=":10000" required="false" advanced="false" />
+			<ITEM name="anchored" value="false" type="string" description="anchored split mapping, only unmapped reads with mapped mates will be considered, requires the reads to be given in SAM format" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="penalty-c" value="2" type="integer" description="percent of read length, used as penalty for split-gap" required="false" advanced="false" />
+			<ITEM name="overabundance-cut" value="" type="integer" description="Set k-mer overabundance cut ratio." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="repeat-length" value="1000" type="integer" description="Skip simple-repeats of length &lt;NUM&gt;." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="taboo-length" value="1" type="integer" description="Set taboo length." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="low-memory" value="false" type="string" description="decrease memory usage at the expense of runtime" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="match-N" value="false" type="string" description="N matches all other characters. Default: N matches nothing." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="error-distr" value="" type="string" description="Write error distribution to FILE." required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="A reference genome file." supported_formats="*.fq,*.fastq,*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.embl,*.gbk,*.raw,*.bam,*.sam" required="true" advanced="false" />
+			<ITEMLIST name="argument-1"  type="input_file" description="Either one (single-end) or two (paired-end) read files." supported_formats="*.fq,*.fastq,*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.embl,*.gbk,*.raw,*.bam,*.sam,*.sam" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

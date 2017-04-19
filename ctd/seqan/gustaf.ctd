@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Gustaf" version="1.0.0" docurl="http://www.seqan.de" category="" >
+	<executableName>gustaf</executableName>
+	<description>Gustaf - Generic mUlti-SpliT Alignment Finder: Tool for split-read mapping allowing multiple splits.</description>
+	<manual>GUSTAF uses SeqAns STELLAR to find splits as local matches on different strands or chromosomes. Criteria and penalties to chain these matches can be specified. Output file contains the breakpoints along the best chain.
+The genome file is used as database input, the read file as query input.
+All STELLAR options are supported. See STELLAR documentation for STELLAR parameters and options.
+(c) 2011-2012 by Kathrin Trappe
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="gustaf.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--transPen" isList="false">
+			<mapping referenceName="gustaf.transPen" />
+		</clielement>
+		<clielement optionIdentifier="--invPen" isList="false">
+			<mapping referenceName="gustaf.invPen" />
+		</clielement>
+		<clielement optionIdentifier="--orderPen" isList="false">
+			<mapping referenceName="gustaf.orderPen" />
+		</clielement>
+		<clielement optionIdentifier="--overlapThresh" isList="false">
+			<mapping referenceName="gustaf.overlapThresh" />
+		</clielement>
+		<clielement optionIdentifier="--gapThresh" isList="false">
+			<mapping referenceName="gustaf.gapThresh" />
+		</clielement>
+		<clielement optionIdentifier="--initGapThresh" isList="false">
+			<mapping referenceName="gustaf.initGapThresh" />
+		</clielement>
+		<clielement optionIdentifier="--breakendThresh" isList="false">
+			<mapping referenceName="gustaf.breakendThresh" />
+		</clielement>
+		<clielement optionIdentifier="--tandemThresh" isList="false">
+			<mapping referenceName="gustaf.tandemThresh" />
+		</clielement>
+		<clielement optionIdentifier="--breakpoint-pos-range" isList="false">
+			<mapping referenceName="gustaf.breakpoint-pos-range" />
+		</clielement>
+		<clielement optionIdentifier="--complex-breakpoints" isList="false">
+			<mapping referenceName="gustaf.complex-breakpoints" />
+		</clielement>
+		<clielement optionIdentifier="--support" isList="false">
+			<mapping referenceName="gustaf.support" />
+		</clielement>
+		<clielement optionIdentifier="--mate-support" isList="false">
+			<mapping referenceName="gustaf.mate-support" />
+		</clielement>
+		<clielement optionIdentifier="--library-size" isList="false">
+			<mapping referenceName="gustaf.library-size" />
+		</clielement>
+		<clielement optionIdentifier="--library-error" isList="false">
+			<mapping referenceName="gustaf.library-error" />
+		</clielement>
+		<clielement optionIdentifier="--revcompl" isList="false">
+			<mapping referenceName="gustaf.revcompl" />
+		</clielement>
+		<clielement optionIdentifier="--matchfile" isList="false">
+			<mapping referenceName="gustaf.matchfile" />
+		</clielement>
+		<clielement optionIdentifier="--gffOut" isList="false">
+			<mapping referenceName="gustaf.gffOut" />
+		</clielement>
+		<clielement optionIdentifier="--vcfOut" isList="false">
+			<mapping referenceName="gustaf.vcfOut" />
+		</clielement>
+		<clielement optionIdentifier="--jobName" isList="false">
+			<mapping referenceName="gustaf.jobName" />
+		</clielement>
+		<clielement optionIdentifier="--dots" isList="false">
+			<mapping referenceName="gustaf.dots" />
+		</clielement>
+		<clielement optionIdentifier="--numThreads" isList="false">
+			<mapping referenceName="gustaf.numThreads" />
+		</clielement>
+		<clielement optionIdentifier="--epsilon" isList="false">
+			<mapping referenceName="gustaf.epsilon" />
+		</clielement>
+		<clielement optionIdentifier="--minLength" isList="false">
+			<mapping referenceName="gustaf.minLength" />
+		</clielement>
+		<clielement optionIdentifier="--forward" isList="false">
+			<mapping referenceName="gustaf.forward" />
+		</clielement>
+		<clielement optionIdentifier="--reverse" isList="false">
+			<mapping referenceName="gustaf.reverse" />
+		</clielement>
+		<clielement optionIdentifier="--alphabet" isList="false">
+			<mapping referenceName="gustaf.alphabet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="gustaf.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--kmer" isList="false">
+			<mapping referenceName="gustaf.kmer" />
+		</clielement>
+		<clielement optionIdentifier="--repeatPeriod" isList="false">
+			<mapping referenceName="gustaf.repeatPeriod" />
+		</clielement>
+		<clielement optionIdentifier="--repeatLength" isList="false">
+			<mapping referenceName="gustaf.repeatLength" />
+		</clielement>
+		<clielement optionIdentifier="--abundanceCut" isList="false">
+			<mapping referenceName="gustaf.abundanceCut" />
+		</clielement>
+		<clielement optionIdentifier="--xDrop" isList="false">
+			<mapping referenceName="gustaf.xDrop" />
+		</clielement>
+		<clielement optionIdentifier="--verification" isList="false">
+			<mapping referenceName="gustaf.verification" />
+		</clielement>
+		<clielement optionIdentifier="--disableThresh" isList="false">
+			<mapping referenceName="gustaf.disableThresh" />
+		</clielement>
+		<clielement optionIdentifier="--numMatches" isList="false">
+			<mapping referenceName="gustaf.numMatches" />
+		</clielement>
+		<clielement optionIdentifier="--sortThresh" isList="false">
+			<mapping referenceName="gustaf.sortThresh" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="gustaf.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="gustaf.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="gustaf" description="Gustaf - Generic mUlti-SpliT Alignment Finder: Tool for split-read mapping allowing multiple splits.">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="transPen" value="5" type="integer" description="Interchromosomal translocation penalty" required="false" advanced="false" />
+			<ITEM name="invPen" value="5" type="integer" description="Inversion penalty" required="false" advanced="false" />
+			<ITEM name="orderPen" value="0" type="integer" description="Intrachromosomal order change penalty" required="false" advanced="false" />
+			<ITEM name="overlapThresh" value="0.5" type="double" description="Allowed overlap between matches" required="false" advanced="false" />
+			<ITEM name="gapThresh" value="5" type="integer" description="Allowed gap length between matches, default value corresponse to expected size of microindels (5 bp)" required="false" advanced="false" />
+			<ITEM name="initGapThresh" value="15" type="integer" description="Allowed initial or ending gap length at begin and end of read with no breakpoint (e.g. due to sequencing errors at the end)" required="false" advanced="false" />
+			<ITEM name="breakendThresh" value="30" type="integer" description="Allowed initial or ending gap length at begin and end of read that creates a breakend/breakpoint (e.g. for reads extending into insertions)" required="false" advanced="false" />
+			<ITEM name="tandemThresh" value="50" type="integer" description="Minimal length of (small) insertion/duplication with double overlap to be considered tandem repeat" required="false" advanced="false" />
+			<ITEM name="breakpoint-pos-range" value="5" type="integer" description="Allowed difference in breakpoint position" required="false" advanced="false" />
+			<ITEM name="complex-breakpoints" value="false" type="string" description="Disable inferring complex SVs" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="support" value="2" type="integer" description="Number of supporting reads" required="false" advanced="false" />
+			<ITEM name="mate-support" value="2" type="integer" description="Number of supporting concordant mates" required="false" advanced="false" />
+			<ITEM name="library-size" value="" type="integer" description="Library size of paired-end reads" required="false" advanced="false" />
+			<ITEM name="library-error" value="" type="integer" description="Library error (sd) of paired-end reads" required="false" advanced="false" />
+			<ITEM name="revcompl" value="false" type="string" description="Disable reverse complementing second mate pair input file." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="matchfile" value="" type="input_file" description="File of (stellar) matches" supported_formats="*.gff,*.GFF" required="false" advanced="false" />
+			<ITEM name="gffOut" value="breakpoints.gff" type="output_file" description="Name of gff breakpoint output file." supported_formats="*.gff,*.txt" required="false" advanced="false" />
+			<ITEM name="vcfOut" value="breakpoints.vcf" type="output_file" description="Name of vcf breakpoint output file." supported_formats="*.vcf,*.txt" required="false" advanced="false" />
+			<ITEM name="jobName" value="" type="string" description="Job/Queue name" required="false" advanced="false" />
+			<ITEM name="dots" value="false" type="string" description="Enable graph output in dot format" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="numThreads" value="1" type="integer" description="Number of threads for parallelization of I/O." required="false" advanced="false" />
+			<ITEM name="epsilon" value="0.05" type="double" description="Maximal error rate (max 0.25)." restrictions="0.0000001:0.25" required="false" advanced="false" />
+			<ITEM name="minLength" value="100" type="integer" description="Minimal length of epsilon-matches." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="forward" value="false" type="string" description="Search only in forward strand of database." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="reverse" value="false" type="string" description="Search only in reverse complement of database." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="alphabet" value="" type="string" description="Alphabet type of input sequences (dna, rna, dna5, rna5, protein, char)." restrictions="dna,dna5,rna,rna5,protein,char" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Set verbosity mode." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="kmer" value="" type="integer" description="Length of the q-grams (max 32)." restrictions="1:32" required="false" advanced="false" />
+			<ITEM name="repeatPeriod" value="1" type="integer" description="Maximal period of low complexity repeats to be filtered." required="false" advanced="false" />
+			<ITEM name="repeatLength" value="1000" type="integer" description="Minimal length of low complexity repeats to be filtered." required="false" advanced="false" />
+			<ITEM name="abundanceCut" value="1" type="double" description="k-mer overabundance cut ratio." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="xDrop" value="5" type="double" description="Maximal x-drop for extension." required="false" advanced="false" />
+			<ITEM name="verification" value="exact" type="string" description="Verification strategy: exact or bestLocal or bandedGlobal" restrictions="exact,bestLocal,bandedGlobal" required="false" advanced="false" />
+			<ITEM name="disableThresh" value="" type="integer" description="Maximal number of verified matches before disabling verification for one query sequence (default infinity)." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="numMatches" value="50" type="integer" description="Maximal number of kept matches per query and database. If STELLAR finds more matches, only the longest ones are kept." required="false" advanced="false" />
+			<ITEM name="sortThresh" value="500" type="integer" description="Number of matches triggering removal of duplicates. Choose a smaller value for saving space." required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="" supported_formats="*.fa,*.fasta,*.fq,*.fastq" required="true" advanced="false" />
+			<ITEMLIST name="argument-1"  type="input_file" description="Either one (single-end) or two (paired-end) read files." supported_formats="*.fa,*.fasta,*.fq,*.fastq" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Seqcons2" version="2.0.7 [tarball]" docurl="http://www.seqan.de" category="" >
+	<executableName>seqcons2</executableName>
+	<description>Compute consensus from sequences.</description>
+	<manual>Compute consensus from sequences with and without approximate alignment information.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="seqcons2.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="seqcons2.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="seqcons2.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="seqcons2.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--method" isList="false">
+			<mapping referenceName="seqcons2.method" />
+		</clielement>
+		<clielement optionIdentifier="--input-file" isList="false">
+			<mapping referenceName="seqcons2.input-file" />
+		</clielement>
+		<clielement optionIdentifier="--output-alignment-file" isList="false">
+			<mapping referenceName="seqcons2.output-alignment-file" />
+		</clielement>
+		<clielement optionIdentifier="--output-consensus-file" isList="false">
+			<mapping referenceName="seqcons2.output-consensus-file" />
+		</clielement>
+		<clielement optionIdentifier="--overlap-min-length" isList="false">
+			<mapping referenceName="seqcons2.overlap-min-length" />
+		</clielement>
+		<clielement optionIdentifier="--overlap-max-error" isList="false">
+			<mapping referenceName="seqcons2.overlap-max-error" />
+		</clielement>
+		<clielement optionIdentifier="--overlap-min-count" isList="false">
+			<mapping referenceName="seqcons2.overlap-min-count" />
+		</clielement>
+		<clielement optionIdentifier="--overlap-window-size" isList="false">
+			<mapping referenceName="seqcons2.overlap-window-size" />
+		</clielement>
+		<clielement optionIdentifier="--k-mer-size" isList="false">
+			<mapping referenceName="seqcons2.k-mer-size" />
+		</clielement>
+		<clielement optionIdentifier="--k-mer-max-occ" isList="false">
+			<mapping referenceName="seqcons2.k-mer-max-occ" />
+		</clielement>
+		<clielement optionIdentifier="--realign-bandwidth" isList="false">
+			<mapping referenceName="seqcons2.realign-bandwidth" />
+		</clielement>
+		<clielement optionIdentifier="--realign-environment" isList="false">
+			<mapping referenceName="seqcons2.realign-environment" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="seqcons2" description="Compute consensus from sequences.">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Set verbosity to a minimum." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable very verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="method" value="pos_consensus" type="string" description="Method to perform.  See section Methods below for details." restrictions="nop,realign,align_consensus,overlap_consensus,contig_consensus,pos_consensus" required="false" advanced="false" />
+			<ITEM name="input-file" value="" type="input_file" description="Input file." supported_formats="*.sam,*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="output-alignment-file" value="" type="output_file" description="Output file with alignment." supported_formats="*.sam,*.txt" required="false" advanced="false" />
+			<ITEM name="output-consensus-file" value="" type="output_file" description="Output file with consensus sequence." supported_formats="*.fa,*.fasta" required="false" advanced="false" />
+			<ITEM name="overlap-min-length" value="20" type="integer" description="Minimal overlap length." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="overlap-max-error" value="5.0" type="double" description="Maximal error rate in overlap as percentage." restrictions="0.0:" required="false" advanced="false" />
+			<ITEM name="overlap-min-count" value="3" type="integer" description="Minimal overlap count." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="overlap-window-size" value="20" type="integer" description="Window size to look for alignments." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="k-mer-size" value="20" type="integer" description="The k-mer size to use." restrictions="5:" required="false" advanced="false" />
+			<ITEM name="k-mer-max-occ" value="200" type="integer" description="Ignore k-mer with higher occurrence count, 0 to disable." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="realign-bandwidth" value="10" type="integer" description="Bandwidth to use for pairwise alignments in realignment." restrictions="5:" required="false" advanced="false" />
+			<ITEM name="realign-environment" value="20" type="integer" description="Environment for extraction in realignment." restrictions="5:" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

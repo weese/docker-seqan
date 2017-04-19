@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Alf" version="1.1.8 [tarball]" docurl="http://www.seqan.de" category="Sequence Comparison" >
+	<executableName>alf</executableName>
+	<description>Alignment free sequence comparison</description>
+	<manual>Compute pairwise similarity of sequences using alignment-free methods in IN.FASTA and write out tab-delimited matrix with pairwise scores to OUT.TXT.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="alf.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="alf.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--input-file" isList="false">
+			<mapping referenceName="alf.input-file" />
+		</clielement>
+		<clielement optionIdentifier="--output-file" isList="false">
+			<mapping referenceName="alf.output-file" />
+		</clielement>
+		<clielement optionIdentifier="--method" isList="false">
+			<mapping referenceName="alf.method" />
+		</clielement>
+		<clielement optionIdentifier="--k-mer-size" isList="false">
+			<mapping referenceName="alf.k-mer-size" />
+		</clielement>
+		<clielement optionIdentifier="--bg-model-order" isList="false">
+			<mapping referenceName="alf.bg-model-order" />
+		</clielement>
+		<clielement optionIdentifier="--reverse-complement" isList="false">
+			<mapping referenceName="alf.reverse-complement" />
+		</clielement>
+		<clielement optionIdentifier="--mismatches" isList="false">
+			<mapping referenceName="alf.mismatches" />
+		</clielement>
+		<clielement optionIdentifier="--mismatch-weight" isList="false">
+			<mapping referenceName="alf.mismatch-weight" />
+		</clielement>
+		<clielement optionIdentifier="--k-mer-weights-file" isList="false">
+			<mapping referenceName="alf.k-mer-weights-file" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="alf" description="Alignment free sequence comparison">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="When given, details about the progress are printed to the screen." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="input-file" value="" type="input_file" description="Name of the multi-FASTA input file." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="output-file" value="" type="output_file" description="Name of the file to which the tab-delimtied matrix with pairwise scores will be written to.  Default is to write to stdout." supported_formats="*.alf.tsv" required="false" advanced="false" />
+			<ITEM name="method" value="N2" type="string" description="Select method to use." restrictions="N2,D2,D2Star,D2z" required="false" advanced="false" />
+			<ITEM name="k-mer-size" value="4" type="integer" description="Size of the k-mers." required="false" advanced="false" />
+			<ITEM name="bg-model-order" value="1" type="integer" description="Order of background Markov Model." required="false" advanced="false" />
+			<ITEM name="reverse-complement" value="input" type="string" description="Which strand to score.  Use both_strands to score both strands simultaneously." restrictions="input,both_strands,mean,min,max" required="false" advanced="false" />
+			<ITEM name="mismatches" value="0" type="integer" description="Number of mismatches, one of 0 and 1.  When 1 is used, N2 uses the k-mer-neighbour with one mismatch." required="false" advanced="false" />
+			<ITEM name="mismatch-weight" value="0.1" type="double" description="Real-valued weight of counts for words with mismatches." required="false" advanced="false" />
+			<ITEM name="k-mer-weights-file" value="" type="output_file" description="Print k-mer weights for every sequence to this file if given." supported_formats="*.txt" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

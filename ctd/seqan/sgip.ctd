@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Sgip" version="1.4.6 [tarball]" docurl="http://www.seqan.de" category="" >
+	<executableName>sgip</executableName>
+	<description>Solution of Graph Isomorphism Problem</description>
+	<manual></manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="sgip.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--original" isList="false">
+			<mapping referenceName="sgip.original" />
+		</clielement>
+		<clielement optionIdentifier="--algorithm" isList="false">
+			<mapping referenceName="sgip.algorithm" />
+		</clielement>
+		<clielement optionIdentifier="--searching" isList="false">
+			<mapping referenceName="sgip.searching" />
+		</clielement>
+		<clielement optionIdentifier="--isomorphism" isList="false">
+			<mapping referenceName="sgip.isomorphism" />
+		</clielement>
+		<clielement optionIdentifier="--comparative" isList="false">
+			<mapping referenceName="sgip.comparative" />
+		</clielement>
+		<clielement optionIdentifier="--odimension" isList="false">
+			<mapping referenceName="sgip.odimension" />
+		</clielement>
+		<clielement optionIdentifier="--cdimension" isList="false">
+			<mapping referenceName="sgip.cdimension" />
+		</clielement>
+		<clielement optionIdentifier="--directory" isList="false">
+			<mapping referenceName="sgip.directory" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="sgip.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--result" isList="false">
+			<mapping referenceName="sgip.result" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="sgip" description="Solution of Graph Isomorphism Problem">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="original" value="" type="input_file" description="File containing original graph" required="true" advanced="false" />
+			<ITEM name="algorithm" value="greedy" type="string" description="Algorithm used for searching metric dimension" required="false" advanced="false" />
+			<ITEM name="searching" value="0" type="integer" description="Searching algorithm used for detecting resolving set,heuristic 0 bruteforce 1." required="false" advanced="false" />
+			<ITEM name="isomorphism" value="false" type="string" description="To check whether two given graphs are isomorphic" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="comparative" value="" type="input_file" description="File containing comparative graph" required="false" advanced="false" />
+			<ITEM name="odimension" value="3" type="integer" description="Specified initial dimension of original graph by user" required="false" advanced="false" />
+			<ITEM name="cdimension" value="3" type="integer" description="Specified initial dimension of comparative graph by user" required="false" advanced="false" />
+			<ITEM name="directory" value="" type="string" description="test for all graphs in a specified directory" required="false" advanced="false" />
+			<ITEM name="verbose" value="0" type="integer" description="control the level of output files " required="false" advanced="false" />
+			<ITEM name="result" value="" type="output_file" description="File containing canonical label of input graphs" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Sak" version="0.4.6 [tarball]" docurl="http://www.seqan.de" category="Utilities" >
+	<executableName>sak</executableName>
+	<description>Slicing and dicing of FASTA/FASTQ files..</description>
+	<manual>&quot;It slices, it dices and it makes the laundry!&quot;
+Original SAK tool by David Weese. Rewrite by Manuel Holtgrewe.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="sak.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--out-path" isList="false">
+			<mapping referenceName="sak.out-path" />
+		</clielement>
+		<clielement optionIdentifier="--revcomp" isList="false">
+			<mapping referenceName="sak.revcomp" />
+		</clielement>
+		<clielement optionIdentifier="--max-length" isList="false">
+			<mapping referenceName="sak.max-length" />
+		</clielement>
+		<clielement optionIdentifier="--sequence" isList="true">
+			<mapping referenceName="sak.sequence" />
+		</clielement>
+		<clielement optionIdentifier="--sequence-name" isList="true">
+			<mapping referenceName="sak.sequence-name" />
+		</clielement>
+		<clielement optionIdentifier="--sequences" isList="true">
+			<mapping referenceName="sak.sequences" />
+		</clielement>
+		<clielement optionIdentifier="--infix" isList="true">
+			<mapping referenceName="sak.infix" />
+		</clielement>
+		<clielement optionIdentifier="--line-length" isList="false">
+			<mapping referenceName="sak.line-length" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="sak.argument-0" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="sak" description="Slicing and dicing of FASTA/FASTQ files..">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="out-path" value="" type="output_file" description="Path to the resulting file.  If omitted, result is printed to stdout in FastQ format." supported_formats="*.fq,*.fastq,*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.raw,*.bam,*.sam" required="false" advanced="false" />
+			<ITEM name="revcomp" value="false" type="string" description="Reverse-complement output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="max-length" value="" type="integer" description="Maximal number of sequence characters to write out." required="false" advanced="false" />
+			<ITEMLIST name="sequence" type="integer" description="Select the given sequence for extraction by 0-based index." required="false" advanced="false" >
+			</ITEMLIST>
+			<ITEMLIST name="sequence-name" type="string" description="Select sequence with name prefix being NAME." required="false" advanced="false" >
+			</ITEMLIST>
+			<ITEMLIST name="sequences" type="string" description="Select sequences from-to where from and to are 0-based indices." required="false" advanced="false" >
+			</ITEMLIST>
+			<ITEMLIST name="infix" type="string" description="Select characters from-to where from and to are 0-based indices." required="false" advanced="false" >
+			</ITEMLIST>
+			<ITEM name="line-length" value="" type="integer" description="Set line length in output file.  See section Line Length for details." restrictions="-1:" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="" supported_formats="*.fq,*.fastq,*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.embl,*.gbk,*.raw,*.bam,*.sam" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

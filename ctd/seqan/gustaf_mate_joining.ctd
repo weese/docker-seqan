@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="GustafMateJoining" version="1.0.8 [tarball]" docurl="http://www.seqan.de" category="" >
+	<executableName>gustaf_mate_joining</executableName>
+	<description>Joining paired-end files.</description>
+	<manual>Joining two paired-end files into one file with joined (single-end) reads. Automatically reverse-complements reads of the second input file.
+This simple program takes as input two mate pair or paired-end files and outputs a file where both mate sequences have been joined together. The FASTA file with joined mates is an required input file for the paired-end mode of Gustaf. The tool assumes the mates in the second file to be reverse complemented compared to the first file. This behaviour can be turned off using the command line argument &quot;-rc&quot;.
+Given only one input file and two output files, the program will split the reads from the input files at half length, and write the first half of each sequence as mates1 into the first output file and the reversed complemented second half of each sequence as mates2 into the second output file. Reverse complementing the sequences can again be turned off using &quot;-rc&quot;.
+To prepare the joined mate file for the Gustaf paired-end example, call 
+ ./gustaf_mate_joining adeno_modified_reads_mates1.fa adeno_modified_reads_mates2.fa -rc -o adeno_modified_reads_joinedMates.fa
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="gustaf_mate_joining.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--outPath" isList="true">
+			<mapping referenceName="gustaf_mate_joining.outPath" />
+		</clielement>
+		<clielement optionIdentifier="--revcompl" isList="false">
+			<mapping referenceName="gustaf_mate_joining.revcompl" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="gustaf_mate_joining.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="gustaf_mate_joining.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="gustaf_mate_joining.very-verbose" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="gustaf_mate_joining.argument-0" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="gustaf_mate_joining" description="Joining paired-end files.">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEMLIST name="outPath" type="output_file" description="Set name of output FASTA/FASTQ file(s)." supported_formats="*.fasta,*.fa,*.fq,*.fastq" required="false" advanced="false" >
+				<LISTITEM value="joined_mates.fa"/>
+			</ITEMLIST>
+			<ITEM name="revcompl" value="false" type="string" description="Disable reverse complementing second input file." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Set verbosity to a minimum." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable very verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEMLIST name="argument-0"  type="input_file" description="" supported_formats="*.fa,*.fasta,*.fq,*.fastq" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

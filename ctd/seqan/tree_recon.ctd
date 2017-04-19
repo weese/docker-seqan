@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="TreeRecon" version="1.4.6 [tarball]" docurl="http://www.seqan.de" category="Phylogeneny" >
+	<executableName>tree_recon</executableName>
+	<description>Tree reconstruction</description>
+	<manual>Reconstruct phylogenetic tree from Phylip matrix IN.DIST.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="tree_recon.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--matrix" isList="false">
+			<mapping referenceName="tree_recon.matrix" />
+		</clielement>
+		<clielement optionIdentifier="--out-file" isList="false">
+			<mapping referenceName="tree_recon.out-file" />
+		</clielement>
+		<clielement optionIdentifier="--build" isList="false">
+			<mapping referenceName="tree_recon.build" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="tree_recon" description="Tree reconstruction">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="matrix" value="" type="input_file" description="Name Phylip distance matrix file.  Must contain at least three species." supported_formats="*.dist" required="true" advanced="false" />
+			<ITEM name="out-file" value="tree.dot" type="output_file" description="Path to write output to." supported_formats="*.dot,*.newick" required="false" advanced="false" />
+			<ITEM name="build" value="nj" type="string" description="Tree building method. nj: neighbour-joining, min: UPGMA single linkage, max: UPGMA complete linkage, avg: UPGMA average linkage, wavg: UPGMA weighted average linkage.  Neighbour-joining creates an unrooted tree.  We root that tree at the least joined pair." restrictions="nj,min,max,avg,wavg" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

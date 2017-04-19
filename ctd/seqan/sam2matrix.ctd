@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Sam2matrix" version="0.3.6 [tarball]" docurl="http://www.seqan.de" category="Metagenomics" >
+	<executableName>sam2matrix</executableName>
+	<description>This program outputs for each read the ids of references it maps to.</description>
+	<manual>This program determines for each read in the reference file if it has an entry in the provided sam files stating that it mapped. Afterwards a file is generated containing a row for each read which contains the read ID and the index of the mapped references.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="sam2matrix.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--mapping" isList="true">
+			<mapping referenceName="sam2matrix.mapping" />
+		</clielement>
+		<clielement optionIdentifier="--reads" isList="false">
+			<mapping referenceName="sam2matrix.reads" />
+		</clielement>
+		<clielement optionIdentifier="--reference" isList="true">
+			<mapping referenceName="sam2matrix.reference" />
+		</clielement>
+		<clielement optionIdentifier="--out" isList="false">
+			<mapping referenceName="sam2matrix.out" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="sam2matrix" description="This program outputs for each read the ids of references it maps to.">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEMLIST name="mapping" type="input_file" description="File containing the mappings." supported_formats="*.sam" required="true" advanced="false" >
+			</ITEMLIST>
+			<ITEM name="reads" value="" type="input_file" description="File containing the reads contained in the mapping file(s)." supported_formats="*.fq,*.fastq,*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.embl,*.gbk,*.raw,*.bam,*.sam" required="true" advanced="false" />
+			<ITEMLIST name="reference" type="string" description="Name of the file used as reference of the corresponding sam file. If not specified the names of the mapping files are taken" required="false" advanced="false" >
+			</ITEMLIST>
+			<ITEM name="out" value="" type="output_file" description="Output file." supported_formats="*.tsv" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

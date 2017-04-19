@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="MasonVariator" version="2.0.7 [tarball]" docurl="http://www.seqan.de" category="Simulators" >
+	<executableName>mason_variator</executableName>
+	<description>Variation Simulation</description>
+	<manual>Either simulate variation and write out the result to VCF and optionally FASTA files.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="mason_variator.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="mason_variator.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="mason_variator.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="mason_variator.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--seed" isList="false">
+			<mapping referenceName="mason_variator.seed" />
+		</clielement>
+		<clielement optionIdentifier="--in-reference" isList="false">
+			<mapping referenceName="mason_variator.in-reference" />
+		</clielement>
+		<clielement optionIdentifier="--in-variant-tsv" isList="false">
+			<mapping referenceName="mason_variator.in-variant-tsv" />
+		</clielement>
+		<clielement optionIdentifier="--out-vcf" isList="false">
+			<mapping referenceName="mason_variator.out-vcf" />
+		</clielement>
+		<clielement optionIdentifier="--out-fasta" isList="false">
+			<mapping referenceName="mason_variator.out-fasta" />
+		</clielement>
+		<clielement optionIdentifier="--out-breakpoints" isList="false">
+			<mapping referenceName="mason_variator.out-breakpoints" />
+		</clielement>
+		<clielement optionIdentifier="--haplotype-name-sep" isList="false">
+			<mapping referenceName="mason_variator.haplotype-name-sep" />
+		</clielement>
+		<clielement optionIdentifier="--no-gen-var-ids" isList="false">
+			<mapping referenceName="mason_variator.no-gen-var-ids" />
+		</clielement>
+		<clielement optionIdentifier="--num-haplotypes" isList="false">
+			<mapping referenceName="mason_variator.num-haplotypes" />
+		</clielement>
+		<clielement optionIdentifier="--haplotype-sep" isList="false">
+			<mapping referenceName="mason_variator.haplotype-sep" />
+		</clielement>
+		<clielement optionIdentifier="--snp-rate" isList="false">
+			<mapping referenceName="mason_variator.snp-rate" />
+		</clielement>
+		<clielement optionIdentifier="--small-indel-rate" isList="false">
+			<mapping referenceName="mason_variator.small-indel-rate" />
+		</clielement>
+		<clielement optionIdentifier="--min-small-indel-size" isList="false">
+			<mapping referenceName="mason_variator.min-small-indel-size" />
+		</clielement>
+		<clielement optionIdentifier="--max-small-indel-size" isList="false">
+			<mapping referenceName="mason_variator.max-small-indel-size" />
+		</clielement>
+		<clielement optionIdentifier="--sv-indel-rate" isList="false">
+			<mapping referenceName="mason_variator.sv-indel-rate" />
+		</clielement>
+		<clielement optionIdentifier="--sv-inversion-rate" isList="false">
+			<mapping referenceName="mason_variator.sv-inversion-rate" />
+		</clielement>
+		<clielement optionIdentifier="--sv-translocation-rate" isList="false">
+			<mapping referenceName="mason_variator.sv-translocation-rate" />
+		</clielement>
+		<clielement optionIdentifier="--sv-duplication-rate" isList="false">
+			<mapping referenceName="mason_variator.sv-duplication-rate" />
+		</clielement>
+		<clielement optionIdentifier="--min-sv-size" isList="false">
+			<mapping referenceName="mason_variator.min-sv-size" />
+		</clielement>
+		<clielement optionIdentifier="--max-sv-size" isList="false">
+			<mapping referenceName="mason_variator.max-sv-size" />
+		</clielement>
+		<clielement optionIdentifier="--methylation-levels" isList="false">
+			<mapping referenceName="mason_variator.methylation-levels" />
+		</clielement>
+		<clielement optionIdentifier="--meth-cg-mu" isList="false">
+			<mapping referenceName="mason_variator.meth-cg-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-cg-sigma" isList="false">
+			<mapping referenceName="mason_variator.meth-cg-sigma" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chg-mu" isList="false">
+			<mapping referenceName="mason_variator.meth-chg-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chg-sigma" isList="false">
+			<mapping referenceName="mason_variator.meth-chg-sigma" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chh-mu" isList="false">
+			<mapping referenceName="mason_variator.meth-chh-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chh-sigma" isList="false">
+			<mapping referenceName="mason_variator.meth-chh-sigma" />
+		</clielement>
+		<clielement optionIdentifier="--meth-fasta-in" isList="false">
+			<mapping referenceName="mason_variator.meth-fasta-in" />
+		</clielement>
+		<clielement optionIdentifier="--meth-fasta-out" isList="false">
+			<mapping referenceName="mason_variator.meth-fasta-out" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="mason_variator" description="Variation Simulation">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Set verbosity to a minimum." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable very verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="seed" value="0" type="integer" description="The seed to use for the random number generator." required="false" advanced="false" />
+			<ITEM name="in-reference" value="" type="input_file" description="FASTA file with reference." supported_formats="*.fasta,*.fa" required="true" advanced="false" />
+			<ITEM name="in-variant-tsv" value="" type="input_file" description="TSV file with variants to simulate.  See Section on the Variant TSV File below." supported_formats="*.tsv,*.txt" required="false" advanced="false" />
+			<ITEM name="out-vcf" value="" type="input_file" description="VCF file to write simulated variations to." supported_formats="*.vcf" required="true" advanced="false" />
+			<ITEM name="out-fasta" value="" type="input_file" description="FASTA file to write simulated haplotypes to." supported_formats="*.fasta,*.fa" required="false" advanced="false" />
+			<ITEM name="out-breakpoints" value="" type="output_file" description="TSV file to write breakpoints in variants to." supported_formats="*.tsv,*.txt" required="false" advanced="false" />
+			<ITEM name="haplotype-name-sep" value="/" type="string" description="Haplotype name separator in output FASTA." required="false" advanced="false" />
+			<ITEM name="no-gen-var-ids" value="false" type="string" description="Do not generate variant ids." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="num-haplotypes" value="1" type="integer" description="The number of haplotypes to simulate." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="haplotype-sep" value="/" type="string" description="The separator between the chromosome and the haplotype name in the output FASTA file." required="false" advanced="false" />
+			<ITEM name="snp-rate" value="0.0001" type="double" description="Per-base SNP rate." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="small-indel-rate" value="0.000001" type="double" description="Small indel rate." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="min-small-indel-size" value="1" type="integer" description="Minimal small indel size to simulate." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="max-small-indel-size" value="6" type="integer" description="Maximal small indel size to simulate." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="sv-indel-rate" value="0.0000001" type="double" description="Per-base SNP rate." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sv-inversion-rate" value="0.0000001" type="double" description="Per-base SNP rate." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sv-translocation-rate" value="0.0000001" type="double" description="Per-base SNP rate." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="sv-duplication-rate" value="0.0000001" type="double" description="Per-base SNP rate." restrictions="0.0:1.0" required="false" advanced="false" />
+			<ITEM name="min-sv-size" value="50" type="integer" description="Minimal SV size to simulate." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="max-sv-size" value="1000" type="integer" description="Maximal SV size to simulate." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="methylation-levels" value="false" type="string" description="Enable methylation level simulation." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="meth-cg-mu" value="0.6" type="double" description="Median of beta distribution for methylation level of CpG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-cg-sigma" value="0.03" type="double" description="Standard deviation of beta distribution for methylation level of CpG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chg-mu" value="0.08" type="double" description="Median of beta distribution for methylation level of CHG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chg-sigma" value="0.008" type="double" description="Standard deviation of beta distribution for methylation level of CHG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chh-mu" value="0.05" type="double" description="Median of beta distribution for methylation level of CHH loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chh-sigma" value="0.005" type="double" description="Standard deviation of beta distribution for methylation level of CHH loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-fasta-in" value="" type="input_file" description="Path to load original methylation levels from.  Methylation levels are simulated if omitted." supported_formats="*.fa,*.fasta" required="false" advanced="false" />
+			<ITEM name="meth-fasta-out" value="" type="output_file" description="Path to write methylation levels to as FASTA.  Only written if -of/--out-fasta is given." supported_formats="*.fa,*.fasta" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

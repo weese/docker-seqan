@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="SortBam" version="0.1.17" docurl="http://samtools.sourceforge.net/samtools.shtml" category="SAM and BAM Manipulation">
+    <executableName>samtools</executableName>
+    <description><![CDATA[SAMtools BAM Sorting.]]></description>
+    <manual>Sort alignments by leftmost coordinates or by name.</manual>
+    <cli>
+        <clielement optionIdentifier="sort" isList="false" />
+        <clielement optionIdentifier="-f" isList="false" />
+
+        <clielement optionIdentifier="-n" isList="false">
+        	<mapping referenceName="bam_to_sam.sort_by_name" />
+        </clielement>
+
+        <clielement optionIdentifier="-l" isList="false">
+        	<mapping referenceName="bam_to_sam.compression" />
+        </clielement>
+        <!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+        <clielement optionIdentifier="" isList="false">
+            <mapping referenceName="bam_to_sam.file_to_sort" />
+        </clielement>
+        <clielement optionIdentifier="" isList="false">
+            <mapping referenceName="bam_to_sam.sorted_file" />
+        </clielement>
+    </cli>
+    <PARAMETERS version="1.6.2"
+                xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <NODE name="bam_to_sam" description="SAMtools BAM to SAM conversion">
+            <ITEM name="file_to_sort" value="" type="input-file" required="true" description="Input BAM file." supported_formats="*.bam" />
+            <ITEM name="sorted_file" value="" type="output-file" required="true" description="Output BAM file." supported_formats="*.bam" />
+            <ITEM name="sort_by_name" value="false" restrictions="true,false" type="string" description="Sort by query name instead of position." />
+            <ITEM name="compression" value="-1" restrictions="-1:9" type="int" description="Compression level, from 0 to 9 [default: -1, disables compression]" />
+        </NODE>
+    </PARAMETERS>
+</tool>

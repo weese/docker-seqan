@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="MasonMethylation" version="2.0.7 [tarball]" docurl="http://www.seqan.de" category="Simulators" >
+	<executableName>mason_methylation</executableName>
+	<description>Methylation Level Simulation</description>
+	<manual>Simulate methylation levels for IN.fa and write them to OUT.fa.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="mason_methylation.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="mason_methylation.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="mason_methylation.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="mason_methylation.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--seed" isList="false">
+			<mapping referenceName="mason_methylation.seed" />
+		</clielement>
+		<clielement optionIdentifier="--in" isList="false">
+			<mapping referenceName="mason_methylation.in" />
+		</clielement>
+		<clielement optionIdentifier="--out" isList="false">
+			<mapping referenceName="mason_methylation.out" />
+		</clielement>
+		<clielement optionIdentifier="--methylation-levels" isList="false">
+			<mapping referenceName="mason_methylation.methylation-levels" />
+		</clielement>
+		<clielement optionIdentifier="--meth-cg-mu" isList="false">
+			<mapping referenceName="mason_methylation.meth-cg-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-cg-sigma" isList="false">
+			<mapping referenceName="mason_methylation.meth-cg-sigma" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chg-mu" isList="false">
+			<mapping referenceName="mason_methylation.meth-chg-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chg-sigma" isList="false">
+			<mapping referenceName="mason_methylation.meth-chg-sigma" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chh-mu" isList="false">
+			<mapping referenceName="mason_methylation.meth-chh-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chh-sigma" isList="false">
+			<mapping referenceName="mason_methylation.meth-chh-sigma" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="mason_methylation" description="Methylation Level Simulation">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Low verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Higher verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Highest verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="seed" value="0" type="integer" description="Seed for RNG." required="false" advanced="false" />
+			<ITEM name="in" value="" type="input_file" description="Input FASTA file with genome." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="out" value="" type="input_file" description="Input FASTA file with genome." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="methylation-levels" value="false" type="string" description="Enable methylation level simulation." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="meth-cg-mu" value="0.6" type="double" description="Median of beta distribution for methylation level of CpG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-cg-sigma" value="0.03" type="double" description="Standard deviation of beta distribution for methylation level of CpG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chg-mu" value="0.08" type="double" description="Median of beta distribution for methylation level of CHG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chg-sigma" value="0.008" type="double" description="Standard deviation of beta distribution for methylation level of CHG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chh-mu" value="0.05" type="double" description="Median of beta distribution for methylation level of CHH loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chh-sigma" value="0.005" type="double" description="Standard deviation of beta distribution for methylation level of CHH loci." restrictions="0:1" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

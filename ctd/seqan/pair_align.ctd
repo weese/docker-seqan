@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="PairAlign" version="1.3.6 [tarball]" docurl="http://www.seqan.de" category="Sequence Alignment" >
+	<executableName>pair_align</executableName>
+	<description>Pairwise alignment</description>
+	<manual>The program allows one to align two sequences using dyamic programming alignment algorithms while tweaking various parameters.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="pair_align.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--seq" isList="false">
+			<mapping referenceName="pair_align.seq" />
+		</clielement>
+		<clielement optionIdentifier="--alphabet" isList="false">
+			<mapping referenceName="pair_align.alphabet" />
+		</clielement>
+		<clielement optionIdentifier="--method" isList="false">
+			<mapping referenceName="pair_align.method" />
+		</clielement>
+		<clielement optionIdentifier="--outfile" isList="false">
+			<mapping referenceName="pair_align.outfile" />
+		</clielement>
+		<clielement optionIdentifier="--gop" isList="false">
+			<mapping referenceName="pair_align.gop" />
+		</clielement>
+		<clielement optionIdentifier="--gex" isList="false">
+			<mapping referenceName="pair_align.gex" />
+		</clielement>
+		<clielement optionIdentifier="--matrix" isList="false">
+			<mapping referenceName="pair_align.matrix" />
+		</clielement>
+		<clielement optionIdentifier="--msc" isList="false">
+			<mapping referenceName="pair_align.msc" />
+		</clielement>
+		<clielement optionIdentifier="--mmsc" isList="false">
+			<mapping referenceName="pair_align.mmsc" />
+		</clielement>
+		<clielement optionIdentifier="--low" isList="false">
+			<mapping referenceName="pair_align.low" />
+		</clielement>
+		<clielement optionIdentifier="--high" isList="false">
+			<mapping referenceName="pair_align.high" />
+		</clielement>
+		<clielement optionIdentifier="--config" isList="false">
+			<mapping referenceName="pair_align.config" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="pair_align" description="Pairwise alignment">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="seq" value="" type="input_file" description="FASTA file with two sequences." supported_formats="*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn" required="true" advanced="false" />
+			<ITEM name="alphabet" value="protein" type="string" description="Sequence alphabet." restrictions="protein,dna,rna,text" required="false" advanced="false" />
+			<ITEM name="method" value="gotoh" type="string" description="DP alignment method: Needleman-Wunsch, Gotoh, Smith-Waterman, Longest Common Subsequence" restrictions="nw,gotoh,sw,lcs" required="false" advanced="false" />
+			<ITEM name="outfile" value="out.fasta" type="output_file" description="Output filename." supported_formats="*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.msf" required="false" advanced="false" />
+			<ITEM name="gop" value="-11" type="integer" description="Gap open penalty." required="false" advanced="false" />
+			<ITEM name="gex" value="-1" type="integer" description="Gap extension penalty." required="false" advanced="false" />
+			<ITEM name="matrix" value="" type="string" description="Score matrix." required="false" advanced="false" />
+			<ITEM name="msc" value="5" type="integer" description="Match score." required="false" advanced="false" />
+			<ITEM name="mmsc" value="-4" type="integer" description="Mismatch penalty." required="false" advanced="false" />
+			<ITEM name="low" value="" type="integer" description="Lower diagonal." required="false" advanced="false" />
+			<ITEM name="high" value="" type="integer" description="Upper diagonal." required="false" advanced="false" />
+			<ITEM name="config" value="" type="string" description="Alignment configuration." restrictions="ffff,ffft,fftf,fftt,ftff,ftft,fttf,fttt,tfff,tfft,tftf,tftt,ttff,ttft,tttf,tttt" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

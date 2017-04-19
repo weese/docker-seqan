@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="RabemaBuildGoldStandard" version="1.2.8 [tarball]" docurl="http://www.seqan.de" category="Benchmarking" >
+	<executableName>rabema_build_gold_standard</executableName>
+	<description>RABEMA Gold Standard Builder</description>
+	<manual>This program allows one to build a RABEMA gold standard.  The input is a reference FASTA file and a perfect SAM/BAM map (e.g. created using RazerS 3 in full-sensitivity mode).
+The input SAM/BAM file must be sorted by coordinate.  The program will create a FASTA index file REF.fa.fai for fast random access to the reference.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--out-gsi" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.out-gsi" />
+		</clielement>
+		<clielement optionIdentifier="--reference" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.reference" />
+		</clielement>
+		<clielement optionIdentifier="--in-bam" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.in-bam" />
+		</clielement>
+		<clielement optionIdentifier="--oracle-mode" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.oracle-mode" />
+		</clielement>
+		<clielement optionIdentifier="--match-N" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.match-N" />
+		</clielement>
+		<clielement optionIdentifier="--distance-metric" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.distance-metric" />
+		</clielement>
+		<clielement optionIdentifier="--max-error" isList="false">
+			<mapping referenceName="rabema_build_gold_standard.max-error" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="rabema_build_gold_standard" description="RABEMA Gold Standard Builder">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable even more verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="out-gsi" value="" type="output_file" description="Path to write the resulting GSI file to." supported_formats="*.gsi,*.gsi.gz" required="true" advanced="false" />
+			<ITEM name="reference" value="" type="input_file" description="Path to load reference FASTA from." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="in-bam" value="" type="input_file" description="Path to load the &quot;perfect&quot; SAM/BAM file from." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="false" advanced="false" />
+			<ITEM name="oracle-mode" value="false" type="string" description="Enable oracle mode.  This is used for simulated data when the input SAM/BAM file gives exactly one position that is considered as the true sample position." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="match-N" value="false" type="string" description="When set, N matches all characters without penalty." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="distance-metric" value="edit" type="string" description="Set distance metric.  Valid values: hamming, edit.  Default: edit." restrictions="hamming,edit" required="false" advanced="false" />
+			<ITEM name="max-error" value="0" type="integer" description="Maximal error rate to build gold standard for in percent.  This parameter is an integer and relative to the read length.  In case of oracle mode, the error rate for the read at the sampling position is used and RATE is used as a cutoff threshold." required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

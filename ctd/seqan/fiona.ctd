@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Fiona" version="0.2.8 [tarball]" docurl="http://www.seqan.de" category="Error Correction" >
+	<executableName>fiona</executableName>
+	<description>Parallel and automatic read error correction</description>
+	<manual>Fiona is a tool for the correction of NGS read data sets.  It uses a novel statistical approach for high quality and state-of-the art data structures for low resource consumptions and features a good parallelization.
+You have to specify the approximate genome length of the donor in GENOME_LEN. The reads are read from the file IN.{fq,fa} and are written to OUT.fa.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="fiona.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="fiona.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="fiona.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--correction-infos" isList="false">
+			<mapping referenceName="fiona.correction-infos" />
+		</clielement>
+		<clielement optionIdentifier="--global-corr-limit" isList="false">
+			<mapping referenceName="fiona.global-corr-limit" />
+		</clielement>
+		<clielement optionIdentifier="--no-final-trim-ns" isList="false">
+			<mapping referenceName="fiona.no-final-trim-ns" />
+		</clielement>
+		<clielement optionIdentifier="--genome-length" isList="false">
+			<mapping referenceName="fiona.genome-length" />
+		</clielement>
+		<clielement optionIdentifier="--error-rate" isList="false">
+			<mapping referenceName="fiona.error-rate" />
+		</clielement>
+		<clielement optionIdentifier="--overlap-error-scale" isList="false">
+			<mapping referenceName="fiona.overlap-error-scale" />
+		</clielement>
+		<clielement optionIdentifier="--from-level" isList="false">
+			<mapping referenceName="fiona.from-level" />
+		</clielement>
+		<clielement optionIdentifier="--to-level" isList="false">
+			<mapping referenceName="fiona.to-level" />
+		</clielement>
+		<clielement optionIdentifier="--depth-sample-rate" isList="false">
+			<mapping referenceName="fiona.depth-sample-rate" />
+		</clielement>
+		<clielement optionIdentifier="--no-mask-repeats" isList="false">
+			<mapping referenceName="fiona.no-mask-repeats" />
+		</clielement>
+		<clielement optionIdentifier="--kmer-repeat-ratio" isList="false">
+			<mapping referenceName="fiona.kmer-repeat-ratio" />
+		</clielement>
+		<clielement optionIdentifier="--kmer-repeat-std-dev" isList="false">
+			<mapping referenceName="fiona.kmer-repeat-std-dev" />
+		</clielement>
+		<clielement optionIdentifier="--method" isList="false">
+			<mapping referenceName="fiona.method" />
+		</clielement>
+		<clielement optionIdentifier="--iterations" isList="false">
+			<mapping referenceName="fiona.iterations" />
+		</clielement>
+		<clielement optionIdentifier="--expected" isList="false">
+			<mapping referenceName="fiona.expected" />
+		</clielement>
+		<clielement optionIdentifier="--count" isList="false">
+			<mapping referenceName="fiona.count" />
+		</clielement>
+		<clielement optionIdentifier="--odds-ratio" isList="false">
+			<mapping referenceName="fiona.odds-ratio" />
+		</clielement>
+		<clielement optionIdentifier="--p-value" isList="false">
+			<mapping referenceName="fiona.p-value" />
+		</clielement>
+		<clielement optionIdentifier="--mismatches" isList="false">
+			<mapping referenceName="fiona.mismatches" />
+		</clielement>
+		<clielement optionIdentifier="--overlap-sum" isList="false">
+			<mapping referenceName="fiona.overlap-sum" />
+		</clielement>
+		<clielement optionIdentifier="--indel-length" isList="false">
+			<mapping referenceName="fiona.indel-length" />
+		</clielement>
+		<clielement optionIdentifier="--num-threads" isList="false">
+			<mapping referenceName="fiona.num-threads" />
+		</clielement>
+		<clielement optionIdentifier="--super-packages" isList="false">
+			<mapping referenceName="fiona.super-packages" />
+		</clielement>
+		<clielement optionIdentifier="--packages-per-thread" isList="false">
+			<mapping referenceName="fiona.packages-per-thread" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="fiona.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="fiona.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="fiona" description="Parallel and automatic read error correction">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="More verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="correction-infos" value="false" type="string" description="Enable embedding of correction information in the output file." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="global-corr-limit" value="false" type="string" description="Limit corrections globally and not per round." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="no-final-trim-ns" value="false" type="string" description="Disable trimming of Ns at the end." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="genome-length" value="" type="int64" description="Approximate length of the underlying genome." restrictions="1:" required="true" advanced="false" />
+			<ITEM name="error-rate" value="0.05" type="double" description="Approximate per-base error rate in the read set. A slight overestimation gives better results." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="overlap-error-scale" value="2" type="double" description="The error-rate is multiplied by this scale to define the error rate cutoff in the pairwise read overlap." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="from-level" value="0" type="integer" description="Set the lower bound on the level for suffix tree DFS.  Use 0 for both from-level and to-level to get automatic level detection." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="to-level" value="0" type="integer" description="Set the upper bound on the level for suffix tree DFS.  Use 0 for both to-level and to-level to get automatic level detection." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="depth-sample-rate" value="3" type="integer" description="The depth sampling rate factor." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="no-mask-repeats" value="false" type="string" description="Turn off automatic repeat masking." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="kmer-repeat-ratio" value="0.05" type="double" description="The fraction of k-mers that are considered as repeats." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="kmer-repeat-std-dev" value="2" type="double" description="Multiples of standard deviation (for k-mer repeat cut-off)." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="method" value="classifier" type="string" description="Selects the correction method to use." restrictions="classifier,control_fp,control_fn,expected,count" required="false" advanced="false" />
+			<ITEM name="iterations" value="6" type="integer" description="Number of iterations.  Use 0 for auto-detection." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="expected" value="1" type="double" description="Use expected value correction with the given strictness cutoff for the expected method." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="count" value="7" type="double" description="Use fixed count correction cutoff." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="odds-ratio" value="1" type="double" description="Odds-ratio for the classifier method." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="p-value" value="1" type="double" description="The p value for the expected mode. In sensitivity mode, this is the false discovery rate." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="mismatches" value="1" type="integer" description="The number of accepted mismatches per read." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="overlap-sum" value="0.3" type="double" description="Filter on the number of overlapping bp needed to correct an erroneous bp.  A smaller value leads to lower sensitivity, a higher value leads to higher sensitivity." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="indel-length" value="1" type="integer" description="Maximal indel length.  Use 0 for correcting only substitutions and 1 for edit distance corrections on Illumina reads." restrictions="0:4" required="false" advanced="false" />
+			<ITEM name="num-threads" value="1" type="integer" description="Number of threads to use (default 1)." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="super-packages" value="10" type="integer" description="Number of internal q-gram index creation runs." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="packages-per-thread" value="100" type="integer" description="Set the number of work packages per thread.  More packages result lower memory consumption but possibly a longer running time." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="An input file with reads to be corrected." supported_formats="*.fa,*.fasta,*.fq,*.fastq" required="true" advanced="false" />
+			<ITEM name="argument-1" value="" type="output_file" description="An output file to store the corrected reads." supported_formats="*.fa,*.fasta,*.fq,*.fastq" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

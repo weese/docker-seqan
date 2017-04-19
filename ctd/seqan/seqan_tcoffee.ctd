@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="SeqanTcoffee" version="1.13.6 [tarball]" docurl="http://www.seqan.de" category="Sequence Alignment" >
+	<executableName>seqan_tcoffee</executableName>
+	<description>Multiple sequence alignment</description>
+	<manual>SeqAn::T-Coffee is a multiple sequence alignment tool.
+(c) Copyright 2009 by Tobias Rausch
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="seqan_tcoffee.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--seq" isList="false">
+			<mapping referenceName="seqan_tcoffee.seq" />
+		</clielement>
+		<clielement optionIdentifier="--alphabet" isList="false">
+			<mapping referenceName="seqan_tcoffee.alphabet" />
+		</clielement>
+		<clielement optionIdentifier="--outfile" isList="false">
+			<mapping referenceName="seqan_tcoffee.outfile" />
+		</clielement>
+		<clielement optionIdentifier="--method" isList="true">
+			<mapping referenceName="seqan_tcoffee.method" />
+		</clielement>
+		<clielement optionIdentifier="--libraries" isList="true">
+			<mapping referenceName="seqan_tcoffee.libraries" />
+		</clielement>
+		<clielement optionIdentifier="--pairwise-alignment" isList="false">
+			<mapping referenceName="seqan_tcoffee.pairwise-alignment" />
+		</clielement>
+		<clielement optionIdentifier="--band-width" isList="false">
+			<mapping referenceName="seqan_tcoffee.band-width" />
+		</clielement>
+		<clielement optionIdentifier="--gop" isList="false">
+			<mapping referenceName="seqan_tcoffee.gop" />
+		</clielement>
+		<clielement optionIdentifier="--gex" isList="false">
+			<mapping referenceName="seqan_tcoffee.gex" />
+		</clielement>
+		<clielement optionIdentifier="--matrix" isList="false">
+			<mapping referenceName="seqan_tcoffee.matrix" />
+		</clielement>
+		<clielement optionIdentifier="--msc" isList="false">
+			<mapping referenceName="seqan_tcoffee.msc" />
+		</clielement>
+		<clielement optionIdentifier="--mmsc" isList="false">
+			<mapping referenceName="seqan_tcoffee.mmsc" />
+		</clielement>
+		<clielement optionIdentifier="--usetree" isList="false">
+			<mapping referenceName="seqan_tcoffee.usetree" />
+		</clielement>
+		<clielement optionIdentifier="--build" isList="false">
+			<mapping referenceName="seqan_tcoffee.build" />
+		</clielement>
+		<clielement optionIdentifier="--infile" isList="false">
+			<mapping referenceName="seqan_tcoffee.infile" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="seqan_tcoffee" description="Multiple sequence alignment">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="seq" value="" type="input_file" description="Name of multi-fasta input file." supported_formats="*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn" required="false" advanced="false" />
+			<ITEM name="alphabet" value="protein" type="string" description="The used sequence alphabet." restrictions="protein,dna,rna" required="false" advanced="false" />
+			<ITEM name="outfile" value="out.fasta" type="output_file" description="Name of the output file." supported_formats="*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.msf" required="false" advanced="false" />
+			<ITEMLIST name="method" type="string" description="Defines the generation method for matches. To select multiple generation methods recall this option with different arguments. " restrictions="global,local,overlap,lcs" required="false" advanced="false" >
+				<LISTITEM value="global"/>
+				<LISTITEM value="local"/>
+			</ITEMLIST>
+			<ITEMLIST name="libraries" type="input_file" description="Name of match file. To select multiple files recall this option with different arguments." supported_formats="*.blast,*.mums,*.aln,*.lib" required="false" advanced="false" >
+			</ITEMLIST>
+			<ITEM name="pairwise-alignment" value="" type="string" description="Pairwise alignment method. Default: unbanded for usual alignments (&lt; 50 sequences), banded for deep alignments (&gt;= 50 sequences)" restrictions="unbanded,banded" required="false" advanced="false" />
+			<ITEM name="band-width" value="60" type="integer" description="Band width. This option automatically select banded pairwise alignment (see pa for details)" restrictions="2:" required="false" advanced="false" />
+			<ITEM name="gop" value="-13" type="integer" description="gap open penalty" required="false" advanced="false" />
+			<ITEM name="gex" value="-1" type="integer" description="gap extension penalty" required="false" advanced="false" />
+			<ITEM name="matrix" value="Blosum62" type="string" description="score matrix" required="false" advanced="false" />
+			<ITEM name="msc" value="5" type="integer" description="match score" required="false" advanced="false" />
+			<ITEM name="mmsc" value="-4" type="integer" description="mismatch penalty" required="false" advanced="false" />
+			<ITEM name="usetree" value="" type="string" description="Name of the file containing the Newick Guide Tree." required="false" advanced="false" />
+			<ITEM name="build" value="nj" type="string" description="Method to build the tree. Following methods are provided: Neighbor-Joining (nj), UPGMA single linkage (min), UPGMA complete linkage (max), UPGMA average linkage (avg), UPGMA weighted average linkage (wavg). Neighbor-Joining creates an unrooted tree, which we root at the last joined pair." restrictions="nj,min,max,avg,wavg" required="false" advanced="false" />
+			<ITEM name="infile" value="" type="input_file" description="Name of the alignment file &lt;FASTA FILE&gt;" supported_formats="*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

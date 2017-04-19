@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Join" version="0.5.6 [tarball]" docurl="http://www.seqan.de" category="Databases" >
+	<executableName>join</executableName>
+	<description>EDBT/ICDT 2013 Join</description>
+	<manual></manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="join.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--threads" isList="false">
+			<mapping referenceName="join.threads" />
+		</clielement>
+		<clielement optionIdentifier="--input-type" isList="false">
+			<mapping referenceName="join.input-type" />
+		</clielement>
+		<clielement optionIdentifier="--huge" isList="false">
+			<mapping referenceName="join.huge" />
+		</clielement>
+		<clielement optionIdentifier="--output-file" isList="false">
+			<mapping referenceName="join.output-file" />
+		</clielement>
+		<clielement optionIdentifier="--online" isList="false">
+			<mapping referenceName="join.online" />
+		</clielement>
+		<clielement optionIdentifier="--seed-length" isList="false">
+			<mapping referenceName="join.seed-length" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="join.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="join.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="join" description="EDBT/ICDT 2013 Join">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="threads" value="8" type="integer" description="Specify the number of threads to use." restrictions="1:64" required="false" advanced="false" />
+			<ITEM name="input-type" value="" type="string" description="Specify the type of input." restrictions="dna,geo" required="true" advanced="false" />
+			<ITEM name="huge" value="false" type="string" description="Required if the db contains more than 16M entries." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="output-file" value="result_track2.out" type="string" description="Specify an output file." required="false" advanced="false" />
+			<ITEM name="online" value="false" type="string" description="Perform online join." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="seed-length" value="0" type="integer" description="Minimum seed length." restrictions="0:100" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="" required="true" advanced="false" />
+			<ITEM name="argument-1" value="" type="integer" description="" restrictions="0:32" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

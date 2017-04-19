@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="MasonGenome" version="2.0.7 [tarball]" docurl="http://www.seqan.de" category="Simulators" >
+	<executableName>mason_genome</executableName>
+	<description>Random Genome Simulation</description>
+	<manual>Simulate a random genome to the output file.  For each -l/--contig-length entry, a contig with the given length will be simulated.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="mason_genome.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="mason_genome.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="mason_genome.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="mason_genome.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--contig-length" isList="true">
+			<mapping referenceName="mason_genome.contig-length" />
+		</clielement>
+		<clielement optionIdentifier="--seed" isList="false">
+			<mapping referenceName="mason_genome.seed" />
+		</clielement>
+		<clielement optionIdentifier="--out-file" isList="false">
+			<mapping referenceName="mason_genome.out-file" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="mason_genome" description="Random Genome Simulation">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Set verbosity to a minimum." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable very verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEMLIST name="contig-length" type="integer" description="Length of the contig to simulate. Give one -l value for each contig to simulate." restrictions="1:" required="true" advanced="false" >
+			</ITEMLIST>
+			<ITEM name="seed" value="0" type="integer" description="The seed to use for the random number generator." required="false" advanced="false" />
+			<ITEM name="out-file" value="" type="output_file" description="Output file." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="MasonSplicing" version="2.0.7 [tarball]" docurl="http://www.seqan.de" category="Simulators" >
+	<executableName>mason_splicing</executableName>
+	<description>Generating Transcripts</description>
+	<manual>Create transcripts from IN.fa using the annotations from IN.gff.  The resulting transcripts are written to OUT.fa.
+You can pass an optional VCF file IN.vcf and the transcripts will be created from the haplotypes stored in the VCF file.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="mason_splicing.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="mason_splicing.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="mason_splicing.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="mason_splicing.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--seed" isList="false">
+			<mapping referenceName="mason_splicing.seed" />
+		</clielement>
+		<clielement optionIdentifier="--out" isList="false">
+			<mapping referenceName="mason_splicing.out" />
+		</clielement>
+		<clielement optionIdentifier="--haplotype-name-sep" isList="false">
+			<mapping referenceName="mason_splicing.haplotype-name-sep" />
+		</clielement>
+		<clielement optionIdentifier="--in-gff" isList="false">
+			<mapping referenceName="mason_splicing.in-gff" />
+		</clielement>
+		<clielement optionIdentifier="--gff-type" isList="false">
+			<mapping referenceName="mason_splicing.gff-type" />
+		</clielement>
+		<clielement optionIdentifier="--gff-group-by" isList="false">
+			<mapping referenceName="mason_splicing.gff-group-by" />
+		</clielement>
+		<clielement optionIdentifier="--input-reference" isList="false">
+			<mapping referenceName="mason_splicing.input-reference" />
+		</clielement>
+		<clielement optionIdentifier="--input-vcf" isList="false">
+			<mapping referenceName="mason_splicing.input-vcf" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="mason_splicing" description="Generating Transcripts">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Low verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Higher verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Highest verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="seed" value="0" type="integer" description="Seed for random number generation." required="false" advanced="false" />
+			<ITEM name="out" value="" type="output_file" description="Output of materialized contigs." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="haplotype-name-sep" value="/" type="string" description="String separating contig name from haplotype number." required="false" advanced="false" />
+			<ITEM name="in-gff" value="" type="input_file" description="Path to input GFF or GTF file, must be sorted by reference name." supported_formats="*.gff,*.gtf" required="true" advanced="false" />
+			<ITEM name="gff-type" value="exon" type="input_file" description="Splicing will filter to the records that have this type." required="false" advanced="false" />
+			<ITEM name="gff-group-by" value="Parent" type="input_file" description="Assign features to their parent using the tag with this name." required="false" advanced="false" />
+			<ITEM name="input-reference" value="" type="input_file" description="Path to FASTA file to read the reference from." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="input-vcf" value="" type="input_file" description="Path to the VCF file with variants to apply." supported_formats="*.vcf" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

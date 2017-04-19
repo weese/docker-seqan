@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Dfi" version="2.1.8 [tarball]" docurl="http://www.seqan.de" category="Data Mining" >
+	<executableName>dfi</executableName>
+	<description>Fast String Mining of Multiple Databases under Frequency Constraints</description>
+	<manual>The Deferred Frequency Index (DFI) is a tool for string mining under frequency constraints, i.e., predicates that evaluate solely the frequency of a pattern occurrence in the data. The frequency of a pattern is defined as the number of distinct sequences in a database that contain the pattern at least once. Currently the implementation contains 3 different predicates and can easily be extended by user-defined frequency predicates. The frequencies are calculated during the construction of a suffix tree over all databases, which enables to limit the index construction to a problem-specific minimum referred to as the optimal monotonic hull. 
+(c) Copyright 2010 by David Weese and Marcel H. Schulz
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="dfi.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--minmax" isList="true">
+			<mapping referenceName="dfi.minmax" />
+		</clielement>
+		<clielement optionIdentifier="--support" isList="false">
+			<mapping referenceName="dfi.support" />
+		</clielement>
+		<clielement optionIdentifier="--growth" isList="false">
+			<mapping referenceName="dfi.growth" />
+		</clielement>
+		<clielement optionIdentifier="--entropy" isList="false">
+			<mapping referenceName="dfi.entropy" />
+		</clielement>
+		<clielement optionIdentifier="--output" isList="false">
+			<mapping referenceName="dfi.output" />
+		</clielement>
+		<clielement optionIdentifier="--alphabet" isList="false">
+			<mapping referenceName="dfi.alphabet" />
+		</clielement>
+		<clielement optionIdentifier="--maximal" isList="false">
+			<mapping referenceName="dfi.maximal" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="dfi.argument-0" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="dfi" description="Fast String Mining of Multiple Databases under Frequency Constraints">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEMLIST name="minmax" type="integer" description="Set minimal and maximal frequency per database." required="false" advanced="false" >
+			</ITEMLIST>
+			<ITEM name="support" value="0" type="double" description="Minimal support in the first (with --growth) or all (with --entropy) databases." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="growth" value="" type="double" description="Minimal support ratio between the first and second databases." required="false" advanced="false" />
+			<ITEM name="entropy" value="" type="double" description="Maximal entropy of support values of all databases." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="output" value="" type="output_file" description="Change output filename. Default: &lt;stdout&gt;." supported_formats="*.txt" required="false" advanced="false" />
+			<ITEM name="alphabet" value="char" type="string" description="Specify database alphabet." restrictions="dna,protein,char" required="false" advanced="false" />
+			<ITEM name="maximal" value="false" type="string" description="Output only left and right maximal substrings." restrictions="true,false" required="false" advanced="false" />
+			<ITEMLIST name="argument-0"  type="input_file" description="Database files in Fasta/Fastq or text format (lines are strings)." supported_formats="*.fq,*.fastq,*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.embl,*.gbk,*.raw,*.bam,*.sam" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

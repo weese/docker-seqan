@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Samcat" version="0.3.6 [tarball]" docurl="http://www.seqan.de" category="Utilities" >
+	<executableName>samcat</executableName>
+	<description>SAM/BAM file concatenation and conversion</description>
+	<manual>This tool reads a set of input files in SAM or BAM format and outputs the concatenation of them. If the output file name is omitted the result is written to stdout.
+(c) Copyright in 2014 by David Weese.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="samcat.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--output" isList="false">
+			<mapping referenceName="samcat.output" />
+		</clielement>
+		<clielement optionIdentifier="--bam" isList="false">
+			<mapping referenceName="samcat.bam" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="samcat.verbose" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="samcat.argument-0" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="samcat" description="SAM/BAM file concatenation and conversion">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="output" value="" type="output_file" description="Output file name." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="false" advanced="false" />
+			<ITEM name="bam" value="false" type="string" description="Use BAM format for standard output. Default: SAM." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Print some stats." restrictions="true,false" required="false" advanced="false" />
+			<ITEMLIST name="argument-0"  type="input_file" description="Input SAM or BAM file (or - for stdin)." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

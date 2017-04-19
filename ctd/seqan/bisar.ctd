@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Bisar" version="0.1.8 [tarball]" docurl="http://www.seqan.de" category="BS-Seq Analysis" >
+	<executableName>bisar</executableName>
+	<description>Pairwise four-letter realignment computation for bisulfite reads</description>
+	<manual>This program reads three-letter mappings of bisulfite reads and computes local pairwise four-letter realignments using an advanced statistical alignment model.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="bisar.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--output-file" isList="false">
+			<mapping referenceName="bisar.output-file" />
+		</clielement>
+		<clielement optionIdentifier="--max3-error" isList="false">
+			<mapping referenceName="bisar.max3-error" />
+		</clielement>
+		<clielement optionIdentifier="--max4-error" isList="false">
+			<mapping referenceName="bisar.max4-error" />
+		</clielement>
+		<clielement optionIdentifier="--min-mapq" isList="false">
+			<mapping referenceName="bisar.min-mapq" />
+		</clielement>
+		<clielement optionIdentifier="--ns-subst-errors" isList="false">
+			<mapping referenceName="bisar.ns-subst-errors" />
+		</clielement>
+		<clielement optionIdentifier="--ns-ins-errors" isList="false">
+			<mapping referenceName="bisar.ns-ins-errors" />
+		</clielement>
+		<clielement optionIdentifier="--ns-del-errors" isList="false">
+			<mapping referenceName="bisar.ns-del-errors" />
+		</clielement>
+		<clielement optionIdentifier="--del-error-rate" isList="false">
+			<mapping referenceName="bisar.del-error-rate" />
+		</clielement>
+		<clielement optionIdentifier="--gap-open-score" isList="false">
+			<mapping referenceName="bisar.gap-open-score" />
+		</clielement>
+		<clielement optionIdentifier="--gap-extend-score" isList="false">
+			<mapping referenceName="bisar.gap-extend-score" />
+		</clielement>
+		<clielement optionIdentifier="--bs-conversion-rate" isList="false">
+			<mapping referenceName="bisar.bs-conversion-rate" />
+		</clielement>
+		<clielement optionIdentifier="--global-meth-rate" isList="false">
+			<mapping referenceName="bisar.global-meth-rate" />
+		</clielement>
+		<clielement optionIdentifier="--seq-identity" isList="false">
+			<mapping referenceName="bisar.seq-identity" />
+		</clielement>
+		<clielement optionIdentifier="--ref-n" isList="false">
+			<mapping referenceName="bisar.ref-n" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="bisar.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="bisar.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="bisar.very-verbose" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="bisar.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="bisar.argument-1" />
+		</clielement>
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="bisar.argument-2" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="bisar" description="Pairwise four-letter realignment computation for bisulfite reads">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="output-file" value="" type="output_file" description="Mapping output file." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+			<ITEM name="max3-error" value="3" type="double" description="Max. error rate in 3-letter alphabet." restrictions="0:100" required="false" advanced="false" />
+			<ITEM name="max4-error" value="4" type="double" description="Max. error rate in 4-letter alphabet." restrictions="0:100" required="false" advanced="false" />
+			<ITEM name="min-mapq" value="1" type="double" description="Min required mapping quality." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="ns-subst-errors" value="false" type="string" description="Use empirical substitution error frequencies of Illumina sequencing data for alignment scoring scheme (corresponding to Dohm et al. 2008)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="ns-ins-errors" value="false" type="string" description="Use empirical insertion error frequencies of Illumina sequencing data for alignment scoring scheme (corresponding to Minoche et al. 2011)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="ns-del-errors" value="false" type="string" description="Use empirical deletion error frequencies of Illumina sequencing data for alignment scoring scheme (corresponding to Minoche et al. 2011)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="del-error-rate" value="0.001" type="double" description="Deletion error rate." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="gap-open-score" value="-4.5" type="double" description="Gap open score (original, must be proportional to mismatch scores)." required="false" advanced="false" />
+			<ITEM name="gap-extend-score" value="-2" type="double" description="Gap extend score." required="false" advanced="false" />
+			<ITEM name="bs-conversion-rate" value="0.99" type="double" description="Bisulfite conversion rate." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="global-meth-rate" value="0.5" type="double" description="Global methylation rate." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="seq-identity" value="0.9" type="double" description="Sequence identity used for substitution matrix." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="ref-n" value="0.01" type="double" description="Rate of Ns in reference sequence." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Set verbosity to a minimum." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable very verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="SAM input file containing three-letter read alignments (must be sorted by query names)." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+			<ITEM name="argument-1" value="" type="input_file" description="A reference genome file." supported_formats="*.fq,*.fq.bgzf,*.fq.gz,*.fastq,*.fastq.bgzf,*.fastq.gz,*.fa,*.fa.bgzf,*.fa.gz,*.fasta,*.fasta.bgzf,*.fasta.gz,*.faa,*.faa.bgzf,*.faa.gz,*.ffn,*.ffn.bgzf,*.ffn.gz,*.fna,*.fna.bgzf,*.fna.gz,*.frn,*.frn.bgzf,*.frn.gz,*.embl,*.embl.bgzf,*.embl.gz,*.gbk,*.gbk.bgzf,*.gbk.gz,*.raw,*.raw.bgzf,*.raw.gz,*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+			<ITEMLIST name="argument-2"  type="input_file" description="Either one (single-end) or two (paired-end) read files." supported_formats="*.fq,*.fq.bgzf,*.fq.gz,*.fastq,*.fastq.bgzf,*.fastq.gz,*.fa,*.fa.bgzf,*.fa.gz,*.fasta,*.fasta.bgzf,*.fasta.gz,*.faa,*.faa.bgzf,*.faa.gz,*.ffn,*.ffn.bgzf,*.ffn.gz,*.fna,*.fna.bgzf,*.fna.gz,*.frn,*.frn.bgzf,*.frn.gz,*.embl,*.embl.bgzf,*.embl.gz,*.gbk,*.gbk.bgzf,*.gbk.gz,*.raw,*.raw.bgzf,*.raw.gz,*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

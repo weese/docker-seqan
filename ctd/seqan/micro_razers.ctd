@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="MicroRazers" version="1.0.9 [tarball]" docurl="http://www.seqan.de" category="Read Mapping" >
+	<executableName>micro_razers</executableName>
+	<description>Map small RNA reads possibly containing 3&apos; adapter sequence</description>
+	<manual>MicroRazerS uses a prefix-based mapping strategy to map small RNA reads possibly containing 3&apos; adapter sequence. 
+Input to MicroRazerS is a reference genome file and a file with single-end reads. Use - to read the reads from stdin.
+(c) Copyright 2009 by Anne-Katrin Emde.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="micro_razers.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--output" isList="false">
+			<mapping referenceName="micro_razers.output" />
+		</clielement>
+		<clielement optionIdentifier="--recognition-rate" isList="false">
+			<mapping referenceName="micro_razers.recognition-rate" />
+		</clielement>
+		<clielement optionIdentifier="--seed-length" isList="false">
+			<mapping referenceName="micro_razers.seed-length" />
+		</clielement>
+		<clielement optionIdentifier="--seed-error" isList="false">
+			<mapping referenceName="micro_razers.seed-error" />
+		</clielement>
+		<clielement optionIdentifier="--forward" isList="false">
+			<mapping referenceName="micro_razers.forward" />
+		</clielement>
+		<clielement optionIdentifier="--reverse" isList="false">
+			<mapping referenceName="micro_razers.reverse" />
+		</clielement>
+		<clielement optionIdentifier="--match-N" isList="false">
+			<mapping referenceName="micro_razers.match-N" />
+		</clielement>
+		<clielement optionIdentifier="--max-hits" isList="false">
+			<mapping referenceName="micro_razers.max-hits" />
+		</clielement>
+		<clielement optionIdentifier="--purge-ambiguous" isList="false">
+			<mapping referenceName="micro_razers.purge-ambiguous" />
+		</clielement>
+		<clielement optionIdentifier="--low-memory" isList="false">
+			<mapping referenceName="micro_razers.low-memory" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="micro_razers.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--vverbose" isList="false">
+			<mapping referenceName="micro_razers.vverbose" />
+		</clielement>
+		<clielement optionIdentifier="--alignment" isList="false">
+			<mapping referenceName="micro_razers.alignment" />
+		</clielement>
+		<clielement optionIdentifier="--genome-naming" isList="false">
+			<mapping referenceName="micro_razers.genome-naming" />
+		</clielement>
+		<clielement optionIdentifier="--read-naming" isList="false">
+			<mapping referenceName="micro_razers.read-naming" />
+		</clielement>
+		<clielement optionIdentifier="--sort-order" isList="false">
+			<mapping referenceName="micro_razers.sort-order" />
+		</clielement>
+		<clielement optionIdentifier="--position-format" isList="false">
+			<mapping referenceName="micro_razers.position-format" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="micro_razers.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="micro_razers.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="micro_razers" description="Map small RNA reads possibly containing 3&apos; adapter sequence">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="output" value="" type="output_file" description="Change output filename. (use - to dump to stdout in razers format) Default: &lt;READS FILE&gt;.razers." supported_formats="*.razers,*.sam" required="false" advanced="false" />
+			<ITEM name="recognition-rate" value="100" type="double" description="set the percent recognition rate" restrictions="80:100" required="false" advanced="false" />
+			<ITEM name="seed-length" value="16" type="integer" description="seed length" restrictions="10:" required="false" advanced="false" />
+			<ITEM name="seed-error" value="false" type="string" description="allow for one error in the seed" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="forward" value="false" type="string" description="map reads only to forward strands." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="reverse" value="false" type="string" description="map reads only to reverse strands." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="match-N" value="false" type="string" description="&apos;N&apos; matches with all other characters" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="max-hits" value="100" type="integer" description="output only NUM of the best hits" restrictions="1:" required="false" advanced="false" />
+			<ITEM name="purge-ambiguous" value="false" type="string" description="purge reads with more than max-hits best matches" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="low-memory" value="false" type="string" description="decrease memory usage at the expense of runtime" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="verbose mode" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="vverbose" value="false" type="string" description="very verbose mode" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="alignment" value="false" type="string" description="dump the alignment for each match" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="genome-naming" value="0" type="integer" description="Select how genomes are named. 0 = use Fasta id, 1 = enumerate beginning with 1." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="read-naming" value="0" type="integer" description="Select how reads are named. 0 = use Fasta id, 1 = enumerate beginning with 1." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="sort-order" value="0" type="integer" description="Select how matches are sorted. 0 = read number, 1 = genome position." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="position-format" value="0" type="integer" description="Select begin/end position numbering (see Coordinate section below). 0 = gap space, 1 = position space." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="A reference genome file." supported_formats="*.fq,*.fastq,*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.embl,*.gbk,*.raw,*.bam,*.sam" required="true" advanced="false" />
+			<ITEMLIST name="argument-1"  type="input_file" description="Either one (single-end) or two (paired-end) read files." supported_formats="*.fq,*.fastq,*.fa,*.fasta,*.faa,*.ffn,*.fna,*.frn,*.embl,*.gbk,*.raw,*.bam,*.sam" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

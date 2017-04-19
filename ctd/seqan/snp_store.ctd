@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="SnpStore" version="1.3.6 [tarball]" docurl="http://www.seqan.de" category="Variant Detection" >
+	<executableName>snp_store</executableName>
+	<description>SnpStore</description>
+	<manual>SNP and Indel Calling in Mapped Read Data.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="snp_store.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--output" isList="false">
+			<mapping referenceName="snp_store.output" />
+		</clielement>
+		<clielement optionIdentifier="--only-successful-candidates" isList="false">
+			<mapping referenceName="snp_store.only-successful-candidates" />
+		</clielement>
+		<clielement optionIdentifier="--dont-clip" isList="false">
+			<mapping referenceName="snp_store.dont-clip" />
+		</clielement>
+		<clielement optionIdentifier="--multi" isList="false">
+			<mapping referenceName="snp_store.multi" />
+		</clielement>
+		<clielement optionIdentifier="--hide-qualities" isList="false">
+			<mapping referenceName="snp_store.hide-qualities" />
+		</clielement>
+		<clielement optionIdentifier="--solexa-qual-offset" isList="false">
+			<mapping referenceName="snp_store.solexa-qual-offset" />
+		</clielement>
+		<clielement optionIdentifier="--indel-file" isList="false">
+			<mapping referenceName="snp_store.indel-file" />
+		</clielement>
+		<clielement optionIdentifier="--method" isList="false">
+			<mapping referenceName="snp_store.method" />
+		</clielement>
+		<clielement optionIdentifier="--max-pile" isList="false">
+			<mapping referenceName="snp_store.max-pile" />
+		</clielement>
+		<clielement optionIdentifier="--merged-max-pile" isList="false">
+			<mapping referenceName="snp_store.merged-max-pile" />
+		</clielement>
+		<clielement optionIdentifier="--min-coverage" isList="false">
+			<mapping referenceName="snp_store.min-coverage" />
+		</clielement>
+		<clielement optionIdentifier="--force-call" isList="false">
+			<mapping referenceName="snp_store.force-call" />
+		</clielement>
+		<clielement optionIdentifier="--orientation-aware" isList="false">
+			<mapping referenceName="snp_store.orientation-aware" />
+		</clielement>
+		<clielement optionIdentifier="--max-polymer-run" isList="false">
+			<mapping referenceName="snp_store.max-polymer-run" />
+		</clielement>
+		<clielement optionIdentifier="--diff-pos" isList="false">
+			<mapping referenceName="snp_store.diff-pos" />
+		</clielement>
+		<clielement optionIdentifier="--exclude-border" isList="false">
+			<mapping referenceName="snp_store.exclude-border" />
+		</clielement>
+		<clielement optionIdentifier="--suboptimal" isList="false">
+			<mapping referenceName="snp_store.suboptimal" />
+		</clielement>
+		<clielement optionIdentifier="--realign" isList="false">
+			<mapping referenceName="snp_store.realign" />
+		</clielement>
+		<clielement optionIdentifier="--parse-window-size" isList="false">
+			<mapping referenceName="snp_store.parse-window-size" />
+		</clielement>
+		<clielement optionIdentifier="--min-mutations" isList="false">
+			<mapping referenceName="snp_store.min-mutations" />
+		</clielement>
+		<clielement optionIdentifier="--perc-threshold" isList="false">
+			<mapping referenceName="snp_store.perc-threshold" />
+		</clielement>
+		<clielement optionIdentifier="--min-quality" isList="false">
+			<mapping referenceName="snp_store.min-quality" />
+		</clielement>
+		<clielement optionIdentifier="--theta" isList="false">
+			<mapping referenceName="snp_store.theta" />
+		</clielement>
+		<clielement optionIdentifier="--hetero-rate" isList="false">
+			<mapping referenceName="snp_store.hetero-rate" />
+		</clielement>
+		<clielement optionIdentifier="--min-map-quality" isList="false">
+			<mapping referenceName="snp_store.min-map-quality" />
+		</clielement>
+		<clielement optionIdentifier="--corrected-het" isList="false">
+			<mapping referenceName="snp_store.corrected-het" />
+		</clielement>
+		<clielement optionIdentifier="--mean-alleleFreq" isList="false">
+			<mapping referenceName="snp_store.mean-alleleFreq" />
+		</clielement>
+		<clielement optionIdentifier="--amp-cycles" isList="false">
+			<mapping referenceName="snp_store.amp-cycles" />
+		</clielement>
+		<clielement optionIdentifier="--amp-efficiency" isList="false">
+			<mapping referenceName="snp_store.amp-efficiency" />
+		</clielement>
+		<clielement optionIdentifier="--initial-N" isList="false">
+			<mapping referenceName="snp_store.initial-N" />
+		</clielement>
+		<clielement optionIdentifier="--min-explained-column" isList="false">
+			<mapping referenceName="snp_store.min-explained-column" />
+		</clielement>
+		<clielement optionIdentifier="--indel-threshold" isList="false">
+			<mapping referenceName="snp_store.indel-threshold" />
+		</clielement>
+		<clielement optionIdentifier="--indel-perc-threshold" isList="false">
+			<mapping referenceName="snp_store.indel-perc-threshold" />
+		</clielement>
+		<clielement optionIdentifier="--indel-quality-thresh" isList="false">
+			<mapping referenceName="snp_store.indel-quality-thresh" />
+		</clielement>
+		<clielement optionIdentifier="--both-strands-indel" isList="false">
+			<mapping referenceName="snp_store.both-strands-indel" />
+		</clielement>
+		<clielement optionIdentifier="--exclude-border-indel" isList="false">
+			<mapping referenceName="snp_store.exclude-border-indel" />
+		</clielement>
+		<clielement optionIdentifier="--log-file" isList="false">
+			<mapping referenceName="snp_store.log-file" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="snp_store.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="snp_store.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="snp_store.quiet" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="snp_store.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="snp_store.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="snp_store" description="SnpStore">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="output" value="" type="output_file" description="SNP output file (mandatory)." supported_formats="*.vcf" required="true" advanced="false" />
+			<ITEM name="only-successful-candidates" value="false" type="string" description="Output only successfully called SNP candidates. Default: Output all candidates." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="dont-clip" value="false" type="string" description="Ignore clip tags in gff. Default: off." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="multi" value="false" type="string" description="Keep non-unique fragmentStore.alignedReadStore. Default: off." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="hide-qualities" value="false" type="string" description="Only show coverage (no qualities) in SNP output file. Default: off." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="solexa-qual-offset" value="false" type="string" description="Base qualities are encoded as char value - 64 (instead of char - 33)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="indel-file" value="" type="output_file" description="Output file for called indels in gff format. Default: off." supported_formats="*.gff" required="false" advanced="false" />
+			<ITEM name="method" value="maq" type="string" description="Set method used for SNP calling either threshold based or Maq method." restrictions="thresh,maq" required="false" advanced="false" />
+			<ITEM name="max-pile" value="1" type="integer" description="Maximal number of matches allowed to pile up at the same genome position." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="merged-max-pile" value="false" type="string" description="Do pile up correction on merged lanes. Default: off." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="min-coverage" value="5" type="integer" description="Minimal required number of reads covering a candidate position." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="force-call" value="10" type="integer" description="Always call base if count is &gt;= fc, ignore other parameters. Default: off." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="orientation-aware" value="false" type="string" description="Distinguish between forward and reverse reads. Default: off." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="max-polymer-run" value="100" type="integer" description="Discard indels in homopolymer runs longer than mpr." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="diff-pos" value="0" type="integer" description="Minimal number of different read positions supporting the mutation." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="exclude-border" value="0" type="integer" description="Exclude read positions within eb base pairs of read borders for SNV calling. Default: off." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="suboptimal" value="false" type="string" description="Keep suboptimal reads. Default: off" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="realign" value="false" type="string" description="Realign reads around indel candidates. Default: off" restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="parse-window-size" value="1000000" type="integer" description="Genomic window size for parsing reads (concerns memory consumption, choose smaller windows for higher coverage)." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="min-mutations" value="3" type="integer" description="Minimal number of observed mutations for mutation to be called." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="perc-threshold" value="0.25" type="double" description="Minimal percentage of mutational base for mutation to be called." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="min-quality" value="10" type="double" description="Minimal average quality of mutational base for mutation to be called." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="theta" value="0.85" type="double" description="Dependency coefficient." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="hetero-rate" value="0.001" type="double" description="Heterozygote rate." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="min-map-quality" value="1" type="integer" description="Minimum base call (mapping) quality for a match to be considered." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="corrected-het" value="false" type="string" description="Use amplification bias corrected distribution for heterozygotes. Default: off." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="mean-alleleFreq" value="0.51" type="double" description="Mean ref allele frequency in heterozygotes." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="amp-cycles" value="18" type="integer" description="Number of amplification cycles." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="amp-efficiency" value="0.3" type="double" description="Polymerase efficiency, probability of amplification." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="initial-N" value="10" type="integer" description="Initial allele population size." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="min-explained-column" value="0.8" type="double" description="Minimum fraction of alignment column reads explained by genotype call." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="indel-threshold" value="3" type="integer" description="Minimal number of indel-supporting reads required for indel calling." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="indel-perc-threshold" value="0.25" type="double" description="Minimal ratio of indel-supporting/covering reads for indel to be called." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="indel-quality-thresh" value="1" type="integer" description="Minimal average quality of inserted base/deletion-neighboring bases for indel to be called." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="both-strands-indel" value="false" type="string" description="Both strands need to be observed for indel to be called. Default: off." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="exclude-border-indel" value="0" type="integer" description="Same as option -eb but for indel candidates." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="log-file" value="" type="string" description="Write log to FILE." required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable very verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Set verbosity to a minimum." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="A reference genome file." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEMLIST name="argument-1"  type="input_file" description="Read alignment file(s) sorted by genomic position." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz,*.gff" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

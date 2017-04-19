@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="RabemaEvaluate" version="1.2.8 [tarball]" docurl="http://www.seqan.de" category="Benchmarking" >
+	<executableName>rabema_evaluate</executableName>
+	<description>RABEMA Evaluation</description>
+	<manual>Compare the SAM/bam output MAPPING.sam/MAPPING.bam of any read mapper against the RABEMA gold standard previously built with rabema_build_gold_standard.  The input is a reference FASTA file, a gold standard interval (GSI) file and the SAM/BAM input to evaluate.
+The input SAM/BAM file must be sorted by queryname.  The program will create a FASTA index file REF.fa.fai for fast random access to the reference.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="rabema_evaluate.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="rabema_evaluate.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="rabema_evaluate.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--reference" isList="false">
+			<mapping referenceName="rabema_evaluate.reference" />
+		</clielement>
+		<clielement optionIdentifier="--in-gsi" isList="false">
+			<mapping referenceName="rabema_evaluate.in-gsi" />
+		</clielement>
+		<clielement optionIdentifier="--in-bam" isList="false">
+			<mapping referenceName="rabema_evaluate.in-bam" />
+		</clielement>
+		<clielement optionIdentifier="--out-tsv" isList="false">
+			<mapping referenceName="rabema_evaluate.out-tsv" />
+		</clielement>
+		<clielement optionIdentifier="--dont-check-sorting" isList="false">
+			<mapping referenceName="rabema_evaluate.dont-check-sorting" />
+		</clielement>
+		<clielement optionIdentifier="--oracle-mode" isList="false">
+			<mapping referenceName="rabema_evaluate.oracle-mode" />
+		</clielement>
+		<clielement optionIdentifier="--only-unique-reads" isList="false">
+			<mapping referenceName="rabema_evaluate.only-unique-reads" />
+		</clielement>
+		<clielement optionIdentifier="--match-N" isList="false">
+			<mapping referenceName="rabema_evaluate.match-N" />
+		</clielement>
+		<clielement optionIdentifier="--distance-metric" isList="false">
+			<mapping referenceName="rabema_evaluate.distance-metric" />
+		</clielement>
+		<clielement optionIdentifier="--max-error" isList="false">
+			<mapping referenceName="rabema_evaluate.max-error" />
+		</clielement>
+		<clielement optionIdentifier="--benchmark-category" isList="false">
+			<mapping referenceName="rabema_evaluate.benchmark-category" />
+		</clielement>
+		<clielement optionIdentifier="--trust-NM" isList="false">
+			<mapping referenceName="rabema_evaluate.trust-NM" />
+		</clielement>
+		<clielement optionIdentifier="--extra-pos-tag" isList="false">
+			<mapping referenceName="rabema_evaluate.extra-pos-tag" />
+		</clielement>
+		<clielement optionIdentifier="--ignore-paired-flags" isList="false">
+			<mapping referenceName="rabema_evaluate.ignore-paired-flags" />
+		</clielement>
+		<clielement optionIdentifier="--DONT-PANIC" isList="false">
+			<mapping referenceName="rabema_evaluate.DONT-PANIC" />
+		</clielement>
+		<clielement optionIdentifier="--show-missed-intervals" isList="false">
+			<mapping referenceName="rabema_evaluate.show-missed-intervals" />
+		</clielement>
+		<clielement optionIdentifier="--show-invalid-hits" isList="false">
+			<mapping referenceName="rabema_evaluate.show-invalid-hits" />
+		</clielement>
+		<clielement optionIdentifier="--show-additional-hits" isList="false">
+			<mapping referenceName="rabema_evaluate.show-additional-hits" />
+		</clielement>
+		<clielement optionIdentifier="--show-hits" isList="false">
+			<mapping referenceName="rabema_evaluate.show-hits" />
+		</clielement>
+		<clielement optionIdentifier="--show-try-hit" isList="false">
+			<mapping referenceName="rabema_evaluate.show-try-hit" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="rabema_evaluate" description="RABEMA Evaluation">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable even more verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="reference" value="" type="input_file" description="Path to load reference FASTA from." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="in-gsi" value="" type="input_file" description="Path to load gold standard intervals from. If compressed using gzip, the file will be decompressed on the fly." supported_formats="*.gsi,*.gsi.gz" required="true" advanced="false" />
+			<ITEM name="in-bam" value="" type="input_file" description="Path to load the read mapper SAM or BAM output from." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+			<ITEM name="out-tsv" value="" type="output_file" description="Path to write the statistics to as TSV." supported_formats="*.rabema_report_tsv" required="false" advanced="false" />
+			<ITEM name="dont-check-sorting" value="false" type="string" description="Do not check sortedness (by name) of input SAM/BAM files.  This is required if the reads are not sorted by name in the original FASTQ files.  Files from the SRA and ENA generally are sorted." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="oracle-mode" value="false" type="string" description="Enable oracle mode.  This is used for simulated data when the input GSI file gives exactly one position that is considered as the true sample position.  For simulated data." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="only-unique-reads" value="false" type="string" description="Consider only reads that a single alignment in the mapping result file. Useful for precision computation." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="match-N" value="false" type="string" description="When set, N matches all characters without penalty." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="distance-metric" value="edit" type="string" description="Set distance metric.  Valid values: hamming, edit.  Default: edit." restrictions="hamming,edit" required="false" advanced="false" />
+			<ITEM name="max-error" value="0" type="integer" description="Maximal error rate to build gold standard for in percent.  This parameter is an integer and relative to the read length.  The error rate is ignored in oracle mode, here the distance of the read at the sample position is taken, individually for each read.  Default: 0" required="false" advanced="false" />
+			<ITEM name="benchmark-category" value="all" type="string" description="Set benchmark category.  One of {all, all-best, any-best.  Default: all" restrictions="all,all-best,any-best" required="false" advanced="false" />
+			<ITEM name="trust-NM" value="false" type="string" description="When set, we trust the alignment and distance from SAM/BAM file and no realignment is performed.  Off by default." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="extra-pos-tag" value="" type="string" description="If the CIGAR string is absent, the missing alignment end position can be provided by this BAM tag." required="false" advanced="false" />
+			<ITEM name="ignore-paired-flags" value="false" type="string" description="When set, we ignore all SAM/BAM flags related to pairing.  This is necessary when analyzing SAM from SOAP&apos;s soap2sam.pl script." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="DONT-PANIC" value="false" type="string" description="Do not stop program execution if an additional hit was found that indicates that the gold standard is incorrect." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="show-missed-intervals" value="false" type="string" description="Show details for each missed interval from the GSI." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="show-invalid-hits" value="false" type="string" description="Show details for invalid hits (with too high error rate)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="show-additional-hits" value="false" type="string" description="Show details for additional hits (low enough error rate but not in gold standard." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="show-hits" value="false" type="string" description="Show details for hit intervals." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="show-try-hit" value="false" type="string" description="Show details for each alignment in SAM/BAM input." restrictions="true,false" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

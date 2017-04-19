@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Bam2roi" version="0.2.10 [tarball]" docurl="http://www.seqan.de" category="NGS ROI Analysis" >
+	<executableName>bam2roi</executableName>
+	<description>Create ROI from BAM file.</description>
+	<manual>Calculated consecutive regions of coverage from alignment file IN.bam and write regions of interst to file OUT.roi. Counting is performed over the entire region (including intron and N-regions) based on the CIGAR string of the alignment record.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="bam2roi.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="bam2roi.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="bam2roi.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--input-file" isList="false">
+			<mapping referenceName="bam2roi.input-file" />
+		</clielement>
+		<clielement optionIdentifier="--output-file" isList="false">
+			<mapping referenceName="bam2roi.output-file" />
+		</clielement>
+		<clielement optionIdentifier="--strand-specific" isList="false">
+			<mapping referenceName="bam2roi.strand-specific" />
+		</clielement>
+		<clielement optionIdentifier="--ignore-pairing" isList="false">
+			<mapping referenceName="bam2roi.ignore-pairing" />
+		</clielement>
+		<clielement optionIdentifier="--link-over-skipped" isList="false">
+			<mapping referenceName="bam2roi.link-over-skipped" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="bam2roi" description="Create ROI from BAM file.">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Verbose mode." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Very verbose mode." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="input-file" value="" type="input_file" description="SAM/BAM formatted file.  Must be sorted by coordinate." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+			<ITEM name="output-file" value="" type="output_file" description="Output file with regions of interest." supported_formats="*.roi,*.roi.bgzf,*.roi.gz" required="true" advanced="false" />
+			<ITEM name="strand-specific" value="false" type="string" description="Calculate strand-specific ROIs (see section Strand Specificness below." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="ignore-pairing" value="false" type="string" description="Ignore paired information.  Also see Section ROI Creation Details." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="link-over-skipped" value="false" type="string" description="Link over skipped bases in the read alignment." restrictions="true,false" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

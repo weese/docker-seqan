@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="FxBamCoverage" version="0.2.8 [tarball]" docurl="http://www.seqan.de" category="Utilities" >
+	<executableName>fx_bam_coverage</executableName>
+	<description>Read Coverage Computation.</description>
+	<manual>Compute read coverage and C+G content for a genome.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="fx_bam_coverage.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--in-reference" isList="false">
+			<mapping referenceName="fx_bam_coverage.in-reference" />
+		</clielement>
+		<clielement optionIdentifier="--in-mapping" isList="false">
+			<mapping referenceName="fx_bam_coverage.in-mapping" />
+		</clielement>
+		<clielement optionIdentifier="--window-size" isList="false">
+			<mapping referenceName="fx_bam_coverage.window-size" />
+		</clielement>
+		<clielement optionIdentifier="--out-path" isList="false">
+			<mapping referenceName="fx_bam_coverage.out-path" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="fx_bam_coverage" description="Read Coverage Computation.">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="in-reference" value="" type="input_file" description="Path to the reference file." supported_formats="*.fasta,*.fa" required="true" advanced="false" />
+			<ITEM name="in-mapping" value="" type="input_file" description="Path to the mapping file to analyze." supported_formats="*.sam,*.bam" required="true" advanced="false" />
+			<ITEM name="window-size" value="10000" type="integer" description="Set the size of the non-overlapping windows in base pairs." required="false" advanced="false" />
+			<ITEM name="out-path" value="" type="output_file" description="Path to the resulting file.  If omitted, result is printed to stdout." supported_formats="*.coverage.tsv" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

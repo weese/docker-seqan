@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Casbar" version="0.1.8 [tarball]" docurl="http://www.seqan.de" category="BS-Seq Analysis" >
+	<executableName>casbar</executableName>
+	<description>SNP and methylation level calling</description>
+	<manual>SNP and methylation level calling in mapped bisulfite read data.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="casbar.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--output" isList="false">
+			<mapping referenceName="casbar.output" />
+		</clielement>
+		<clielement optionIdentifier="--bed" isList="false">
+			<mapping referenceName="casbar.bed" />
+		</clielement>
+		<clielement optionIdentifier="--multi" isList="false">
+			<mapping referenceName="casbar.multi" />
+		</clielement>
+		<clielement optionIdentifier="--max-pile" isList="false">
+			<mapping referenceName="casbar.max-pile" />
+		</clielement>
+		<clielement optionIdentifier="--merged-max-pile" isList="false">
+			<mapping referenceName="casbar.merged-max-pile" />
+		</clielement>
+		<clielement optionIdentifier="--min-coverage" isList="false">
+			<mapping referenceName="casbar.min-coverage" />
+		</clielement>
+		<clielement optionIdentifier="--exclude-border" isList="false">
+			<mapping referenceName="casbar.exclude-border" />
+		</clielement>
+		<clielement optionIdentifier="--suboptimal" isList="false">
+			<mapping referenceName="casbar.suboptimal" />
+		</clielement>
+		<clielement optionIdentifier="--parse-window-size" isList="false">
+			<mapping referenceName="casbar.parse-window-size" />
+		</clielement>
+		<clielement optionIdentifier="--intervals" isList="false">
+			<mapping referenceName="casbar.intervals" />
+		</clielement>
+		<clielement optionIdentifier="--bs-conv-rate" isList="false">
+			<mapping referenceName="casbar.bs-conv-rate" />
+		</clielement>
+		<clielement optionIdentifier="--min-mutations" isList="false">
+			<mapping referenceName="casbar.min-mutations" />
+		</clielement>
+		<clielement optionIdentifier="--min-quality" isList="false">
+			<mapping referenceName="casbar.min-quality" />
+		</clielement>
+		<clielement optionIdentifier="--min-map-quality" isList="false">
+			<mapping referenceName="casbar.min-map-quality" />
+		</clielement>
+		<clielement optionIdentifier="--prob-hetero-snp" isList="false">
+			<mapping referenceName="casbar.prob-hetero-snp" />
+		</clielement>
+		<clielement optionIdentifier="--prob-homo-snp" isList="false">
+			<mapping referenceName="casbar.prob-homo-snp" />
+		</clielement>
+		<clielement optionIdentifier="--min-score" isList="false">
+			<mapping referenceName="casbar.min-score" />
+		</clielement>
+		<clielement optionIdentifier="--min-prob" isList="false">
+			<mapping referenceName="casbar.min-prob" />
+		</clielement>
+		<clielement optionIdentifier="--ns-errors-calling" isList="false">
+			<mapping referenceName="casbar.ns-errors-calling" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="casbar.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="casbar.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="casbar.quiet" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="casbar.argument-0" />
+		</clielement>
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="casbar.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="casbar" description="SNP and methylation level calling">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="output" value="" type="output_file" description="Output file for SNPs." supported_formats="*.vcf,*.vcf.bgzf,*.vcf.gz" required="true" advanced="false" />
+			<ITEM name="bed" value="" type="output_file" description="Bed output file for methylation level calls." supported_formats="*.bed,*.bed.bgzf,*.bed.gz" required="true" advanced="false" />
+			<ITEM name="multi" value="false" type="string" description="Keep non-unique reads." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="max-pile" value="0" type="integer" description="Maximal number of matches allowed to pile up at the same genome position." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="merged-max-pile" value="false" type="string" description="Do pile up correction on merged lanes." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="min-coverage" value="6" type="integer" description="Minimal required number of reads covering a candidate position." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="exclude-border" value="0" type="integer" description="Exclude read positions within eb base pairs of read borders for SNP calling." required="false" advanced="false" />
+			<ITEM name="suboptimal" value="false" type="string" description="Keep suboptimal reads." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="parse-window-size" value="100000" type="integer" description="Genomic window size for parsing reads (concerns memory consumption, choose smaller windows for higher coverage)." restrictions="1:100000" required="false" advanced="false" />
+			<ITEM name="intervals" value="" type="string" description="Genomic intervals to analyze. E.g. 21:1000-2000." required="false" advanced="false" />
+			<ITEM name="bs-conv-rate" value="0.998" type="double" description="Bisulfite conversion rate." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="min-mutations" value="3" type="integer" description="Minimal number of deviating bases for calling." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="min-quality" value="10" type="double" description="Minimal average quality for calling." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="min-map-quality" value="1" type="integer" description="Minimum base call quality for a match to be considered." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="prob-hetero-snp" value="0.005" type="double" description="Heterozygous SNP probability to compute genotype prior probabilities." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="prob-homo-snp" value="0.0005" type="double" description="Homozygous SNP probability to compute genotype prior probabilities." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="min-score" value="9" type="double" description="Minimum score to call." required="false" advanced="false" />
+			<ITEM name="min-prob" value="0.7" type="double" description="Minimum genotype probability to call." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="ns-errors-calling" value="false" type="string" description="Use empirical error frequencies of Illumina sequencing data to compute likelihoods in bayesian model (corresponding to Dohm et al. 2008)." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable very verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Set verbosity to a minimum." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="A reference genome file." supported_formats="*.fq,*.fq.bgzf,*.fq.gz,*.fastq,*.fastq.bgzf,*.fastq.gz,*.fa,*.fa.bgzf,*.fa.gz,*.fasta,*.fasta.bgzf,*.fasta.gz,*.faa,*.faa.bgzf,*.faa.gz,*.ffn,*.ffn.bgzf,*.ffn.gz,*.fna,*.fna.bgzf,*.fna.gz,*.frn,*.frn.bgzf,*.frn.gz,*.embl,*.embl.bgzf,*.embl.gz,*.gbk,*.gbk.bgzf,*.gbk.gz,*.raw,*.raw.bgzf,*.raw.gz,*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+			<ITEM name="argument-1" value="" type="input_file" description="SAM input file containing four-letter read alignments (must be sorted by coordinates)." supported_formats="*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

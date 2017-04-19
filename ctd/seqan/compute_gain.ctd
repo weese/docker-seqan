@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="ComputeGain" version="0.2" docurl="http://www.seqan.de" category="Error Correction" >
+	<executableName>compute_gain</executableName>
+	<description>Compute read correction metric GAIN.</description>
+	<manual>This program computes the read correction tool metric GAIN.  It takes a genome FASTA file and two SAM file with read alignments before and after correction.  It then computes various statistics and computes the GAIN, based on the edit or Hamming distance for reach read before and after correction.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="compute_gain.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="compute_gain.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="compute_gain.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="compute_gain.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--num-threads" isList="false">
+			<mapping referenceName="compute_gain.num-threads" />
+		</clielement>
+		<clielement optionIdentifier="--chunk-size" isList="false">
+			<mapping referenceName="compute_gain.chunk-size" />
+		</clielement>
+		<clielement optionIdentifier="--max-chunks" isList="false">
+			<mapping referenceName="compute_gain.max-chunks" />
+		</clielement>
+		<clielement optionIdentifier="--padding" isList="false">
+			<mapping referenceName="compute_gain.padding" />
+		</clielement>
+		<clielement optionIdentifier="--metric" isList="false">
+			<mapping referenceName="compute_gain.metric" />
+		</clielement>
+		<clielement optionIdentifier="--min-unclipped-bases" isList="false">
+			<mapping referenceName="compute_gain.min-unclipped-bases" />
+		</clielement>
+		<clielement optionIdentifier="--max-error-rate" isList="false">
+			<mapping referenceName="compute_gain.max-error-rate" />
+		</clielement>
+		<clielement optionIdentifier="--max-error-count" isList="false">
+			<mapping referenceName="compute_gain.max-error-count" />
+		</clielement>
+		<clielement optionIdentifier="--genome" isList="false">
+			<mapping referenceName="compute_gain.genome" />
+		</clielement>
+		<clielement optionIdentifier="--pre" isList="false">
+			<mapping referenceName="compute_gain.pre" />
+		</clielement>
+		<clielement optionIdentifier="--post-sam" isList="false">
+			<mapping referenceName="compute_gain.post-sam" />
+		</clielement>
+		<clielement optionIdentifier="--post" isList="false">
+			<mapping referenceName="compute_gain.post" />
+		</clielement>
+		<clielement optionIdentifier="--correction-log" isList="false">
+			<mapping referenceName="compute_gain.correction-log" />
+		</clielement>
+		<clielement optionIdentifier="--log-all" isList="false">
+			<mapping referenceName="compute_gain.log-all" />
+		</clielement>
+		<clielement optionIdentifier="--no-check-sorting" isList="false">
+			<mapping referenceName="compute_gain.no-check-sorting" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="compute_gain" description="Compute read correction metric GAIN.">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Disable most output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable more verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable even more verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="num-threads" value="1" type="integer" description="Number of threads to use." restrictions="1:" required="false" advanced="false" />
+			<ITEM name="chunk-size" value="10000" type="integer" description="Chunk size." restrictions="100:" required="false" advanced="false" />
+			<ITEM name="max-chunks" value="0" type="integer" description="Maximal number of chunks to read (0=disabled)." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="padding" value="5" type="integer" description="Additional genome characters to use for alignment in percent of the origina read length." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="metric" value="edit" type="string" description="The metric type to use." restrictions="hamming,edit" required="false" advanced="false" />
+			<ITEM name="min-unclipped-bases" value="0" type="integer" description="Reads with fewer unclipped bases are ignored. Set to 0 to disable ignoring because of this." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="max-error-rate" value="0" type="integer" description="Reads with a higher error rate in the initial mapping are ignored.  Given in percent.  Set to 0 to disable ignoring because of this." restrictions="0:" required="false" advanced="false" />
+			<ITEM name="max-error-count" value="-1" type="integer" description="Reads with a higher error count in the initial mapping are ignored.  Given in percent.  Set to -1 to disable ignoring because of this." restrictions="-1:" required="false" advanced="false" />
+			<ITEM name="genome" value="" type="input_file" description="Genome file." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="pre" value="" type="input_file" description="Pre-correction SAM file." supported_formats="*.sam,*.bam" required="true" advanced="false" />
+			<ITEM name="post-sam" value="" type="input_file" description="Post-correction SAM file." supported_formats="*.sam" required="false" advanced="false" />
+			<ITEM name="post" value="" type="input_file" description="Post-correction FASTQ or FASTA file." supported_formats="*.fastq,*.fq,*.fastq.gz,*.fq.gz,*.fasta,*.fa,*.fasta.gz,*.fa.gz" required="false" advanced="false" />
+			<ITEM name="correction-log" value="" type="output_file" description="Write log about introduced/removed errors to this file." required="false" advanced="false" />
+			<ITEM name="log-all" value="false" type="string" description="Log all not only introduced/removed errors." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="no-check-sorting" value="false" type="string" description="No checking for reads being sorted." restrictions="true,false" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

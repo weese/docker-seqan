@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Four2three" version="0.1.8 [tarball]" docurl="http://www.seqan.de" category="BS-Seq Analysis" >
+	<executableName>four2three</executableName>
+	<description>Four to three-letter alphabet reduction.</description>
+	<manual>This program converts four-letter sequences into three-letter sequences for bisulfite sequence analysis.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="four2three.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--output-file" isList="false">
+			<mapping referenceName="four2three.output-file" />
+		</clielement>
+		<clielement optionIdentifier="--ga-conversion" isList="false">
+			<mapping referenceName="four2three.ga-conversion" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="four2three.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="four2three.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="four2three.very-verbose" />
+		</clielement>
+		<!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="four2three.argument-0" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="four2three" description="Four to three-letter alphabet reduction.">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="output-file" value="" type="output_file" description="Name of output file." supported_formats="*.fq,*.fq.bgzf,*.fq.gz,*.fastq,*.fastq.bgzf,*.fastq.gz,*.fa,*.fa.bgzf,*.fa.gz,*.fasta,*.fasta.bgzf,*.fasta.gz,*.faa,*.faa.bgzf,*.faa.gz,*.ffn,*.ffn.bgzf,*.ffn.gz,*.fna,*.fna.bgzf,*.fna.gz,*.frn,*.frn.bgzf,*.frn.gz,*.raw,*.raw.bgzf,*.raw.gz,*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+			<ITEM name="ga-conversion" value="false" type="string" description="Convert Gs to As, instead of Cs to Ts." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Set verbosity to a minimum." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Enable verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Enable very verbose output." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="argument-0" value="" type="input_file" description="A sequence file containing reads or genome." supported_formats="*.fq,*.fq.bgzf,*.fq.gz,*.fastq,*.fastq.bgzf,*.fastq.gz,*.fa,*.fa.bgzf,*.fa.gz,*.fasta,*.fasta.bgzf,*.fasta.gz,*.faa,*.faa.bgzf,*.faa.gz,*.ffn,*.ffn.bgzf,*.ffn.gz,*.fna,*.fna.bgzf,*.fna.gz,*.frn,*.frn.bgzf,*.frn.gz,*.embl,*.embl.bgzf,*.embl.gz,*.gbk,*.gbk.bgzf,*.gbk.gz,*.raw,*.raw.bgzf,*.raw.gz,*.bam,*.sam,*.sam.bgzf,*.sam.gz" required="true" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="MasonMaterializer" version="2.0.7 [tarball]" docurl="http://www.seqan.de" category="Simulators" >
+	<executableName>mason_materializer</executableName>
+	<description>VCF Materialization</description>
+	<manual>Apply variants from IN.vcf to IN.fa and write the results to out.fa.
+</manual>
+	<cli>
+		<clielement optionIdentifier="--version-check" isList="false">
+			<mapping referenceName="mason_materializer.version-check" />
+		</clielement>
+		<clielement optionIdentifier="--quiet" isList="false">
+			<mapping referenceName="mason_materializer.quiet" />
+		</clielement>
+		<clielement optionIdentifier="--verbose" isList="false">
+			<mapping referenceName="mason_materializer.verbose" />
+		</clielement>
+		<clielement optionIdentifier="--very-verbose" isList="false">
+			<mapping referenceName="mason_materializer.very-verbose" />
+		</clielement>
+		<clielement optionIdentifier="--seed" isList="false">
+			<mapping referenceName="mason_materializer.seed" />
+		</clielement>
+		<clielement optionIdentifier="--meth-seed" isList="false">
+			<mapping referenceName="mason_materializer.meth-seed" />
+		</clielement>
+		<clielement optionIdentifier="--out" isList="false">
+			<mapping referenceName="mason_materializer.out" />
+		</clielement>
+		<clielement optionIdentifier="--out-breakpoints" isList="false">
+			<mapping referenceName="mason_materializer.out-breakpoints" />
+		</clielement>
+		<clielement optionIdentifier="--haplotype-name-sep" isList="false">
+			<mapping referenceName="mason_materializer.haplotype-name-sep" />
+		</clielement>
+		<clielement optionIdentifier="--meth-fasta-in" isList="false">
+			<mapping referenceName="mason_materializer.meth-fasta-in" />
+		</clielement>
+		<clielement optionIdentifier="--meth-fasta-out" isList="false">
+			<mapping referenceName="mason_materializer.meth-fasta-out" />
+		</clielement>
+		<clielement optionIdentifier="--input-reference" isList="false">
+			<mapping referenceName="mason_materializer.input-reference" />
+		</clielement>
+		<clielement optionIdentifier="--input-vcf" isList="false">
+			<mapping referenceName="mason_materializer.input-vcf" />
+		</clielement>
+		<clielement optionIdentifier="--methylation-levels" isList="false">
+			<mapping referenceName="mason_materializer.methylation-levels" />
+		</clielement>
+		<clielement optionIdentifier="--meth-cg-mu" isList="false">
+			<mapping referenceName="mason_materializer.meth-cg-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-cg-sigma" isList="false">
+			<mapping referenceName="mason_materializer.meth-cg-sigma" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chg-mu" isList="false">
+			<mapping referenceName="mason_materializer.meth-chg-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chg-sigma" isList="false">
+			<mapping referenceName="mason_materializer.meth-chg-sigma" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chh-mu" isList="false">
+			<mapping referenceName="mason_materializer.meth-chh-mu" />
+		</clielement>
+		<clielement optionIdentifier="--meth-chh-sigma" isList="false">
+			<mapping referenceName="mason_materializer.meth-chh-sigma" />
+		</clielement>
+	</cli>
+	<PARAMETERS version="1.6.2" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_6_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="mason_materializer" description="VCF Materialization">
+			<ITEM name="version-check" value="1" type="bool" description="Turn this option off to disable version update notifications of the application. " restrictions="1,ON,TRUE,T,YES,0,OFF,FALSE,F,NO" required="false" advanced="false" />
+			<ITEM name="quiet" value="false" type="string" description="Low verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="verbose" value="false" type="string" description="Higher verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="very-verbose" value="false" type="string" description="Highest verbosity." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="seed" value="0" type="integer" description="Seed for random number generation." required="false" advanced="false" />
+			<ITEM name="meth-seed" value="0" type="integer" description="Seed for methylation simulation random number generation." required="false" advanced="false" />
+			<ITEM name="out" value="" type="output_file" description="Output of materialized contigs." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="out-breakpoints" value="" type="output_file" description="TSV file to write breakpoints in variants to." supported_formats="*.tsv,*.txt" required="false" advanced="false" />
+			<ITEM name="haplotype-name-sep" value="/" type="string" description="String separating contig name from haplotype number." required="false" advanced="false" />
+			<ITEM name="meth-fasta-in" value="" type="input_file" description="FASTA file with methylation levels of the input file." supported_formats="*.fa,*.fasta" required="false" advanced="false" />
+			<ITEM name="meth-fasta-out" value="" type="output_file" description="FASTA file with methylation levels of the output file." supported_formats="*.fa,*.fasta" required="false" advanced="false" />
+			<ITEM name="input-reference" value="" type="input_file" description="Path to FASTA file to read the reference from." supported_formats="*.fa,*.fasta" required="true" advanced="false" />
+			<ITEM name="input-vcf" value="" type="input_file" description="Path to the VCF file with variants to apply." supported_formats="*.vcf" required="false" advanced="false" />
+			<ITEM name="methylation-levels" value="false" type="string" description="Enable methylation level simulation." restrictions="true,false" required="false" advanced="false" />
+			<ITEM name="meth-cg-mu" value="0.6" type="double" description="Median of beta distribution for methylation level of CpG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-cg-sigma" value="0.03" type="double" description="Standard deviation of beta distribution for methylation level of CpG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chg-mu" value="0.08" type="double" description="Median of beta distribution for methylation level of CHG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chg-sigma" value="0.008" type="double" description="Standard deviation of beta distribution for methylation level of CHG loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chh-mu" value="0.05" type="double" description="Median of beta distribution for methylation level of CHH loci." restrictions="0:1" required="false" advanced="false" />
+			<ITEM name="meth-chh-sigma" value="0.005" type="double" description="Standard deviation of beta distribution for methylation level of CHH loci." restrictions="0:1" required="false" advanced="false" />
+		</NODE>
+	</PARAMETERS>
+</tool>
