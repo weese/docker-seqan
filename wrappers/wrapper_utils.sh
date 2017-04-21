@@ -37,7 +37,7 @@ function bwa_link_ref()
 {
 	# Link reference.
 	echo "EXECUTING ln -s ${REF} ${THIS_TMP_DIR}/ref.fa"
-	ln -s ${REF} ${THIS_TMP_DIR}/ref.fa
+	ln -s $(readlink -f ${REF}) ${THIS_TMP_DIR}/ref.fa
 
 	# Link index files.
 	for x in ${INDEX}*; do
@@ -46,7 +46,7 @@ function bwa_link_ref()
 		# Extract original index suffix after moving and appending prefix.
 		suffix=$(echo ${bn} | sed "s/${bni}//g" | sed "s/\.bwaidx\$//g")
 		echo "EXECUTING ln -s ${x} ${THIS_TMP_DIR}/ref.fa${suffix}"
-		ln -s ${x} ${THIS_TMP_DIR}/ref.fa${suffix}
+		ln -s $(readlink -f ${x}) ${THIS_TMP_DIR}/ref.fa${suffix}
 	done
 
 	echo "EXECUTING ls -lh ${THIS_TMP_DIR}"

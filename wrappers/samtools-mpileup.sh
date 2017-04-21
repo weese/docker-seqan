@@ -8,4 +8,5 @@ OUT=$1
 shift
 
 # Execute mpileup and then use filter to variant sites using bcftools.
-samtools mpileup -u $* | bcftools view -bvcg - >${OUT}
+echo "EXECUTING samtools mpileup -u $* | bcftools view -v -Ob - >${OUT}"
+samtools mpileup -u $* | bcftools view -v -Ob - >${OUT}

@@ -54,5 +54,6 @@ echo "EXECUTING bwa aln $* ${THIS_TMP_DIR}/ref.fa ${READS} >${THIS_TMP_DIR}/left
 bwa aln $* ${THIS_TMP_DIR}/ref.fa ${READS} >${THIS_TMP_DIR}/left.sai
 echo "EXECUTING bwa aln $* ${THIS_TMP_DIR}/ref.fa ${RIGHT} >${THIS_TMP_DIR}/right.sai"
 bwa aln $* ${THIS_TMP_DIR}/ref.fa ${RIGHT} >${THIS_TMP_DIR}/right.sai
-echo "EXECUTING bwa sampe $* ${THIS_TMP_DIR}/ref.fa ${THIS_TMP_DIR}/left.sai ${READS} ${RIGHT} >${OUT}"
+echo "EXECUTING bwa sampe $* ${THIS_TMP_DIR}/ref.fa ${THIS_TMP_DIR}/left.sai ${THIS_TMP_DIR}/right.sai ${READS} ${RIGHT} >${OUT}"
+ls -la ${THIS_TMP_DIR} ${READS} ${RIGHT}
 bwa sampe $* ${THIS_TMP_DIR}/ref.fa ${THIS_TMP_DIR}/left.sai ${THIS_TMP_DIR}/right.sai ${READS} ${RIGHT} >${OUT}
